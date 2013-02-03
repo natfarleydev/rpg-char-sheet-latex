@@ -1,0 +1,706 @@
+\documentclass[9pt]{article}
+\usepackage[margin=1cm,footskip=0.25in,a4paper]{geometry}
+\usepackage{mathptmx}
+\usepackage{anyfontsize}
+\usepackage{tabularx}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{dashrule}
+\usepackage{etex}
+\usepackage{cancel}
+\usepackage{xcolor}
+\usepackage{color}
+
+
+\newcommand\lfont{\fontsize{4}{4}\selectfont\scshape}
+\makeatletter
+\def\attributes#1#2#3{%
+\count@#1
+\newcount\xcount\xcount=#1
+\@for\tmp:=#3\do{%
+\put(\xcount,#2){\framebox(15,9){\tmp}}%
+\advance\xcount18
+}}
+
+\def\plusattributes#1#2#3#4{%
+\newcount\xcount
+\xcount=#1
+\newcount\pluscount
+\newcount\tmpcount
+\@for\tmp:=#3\do{%
+  \pluscount=0
+  \advance\pluscount by #4
+  \advance\pluscount by -15
+  \tmpcount=\xcount
+  \advance\tmpcount by \number\pluscount
+  \put(\xcount,#2){\makebox(\pluscount,9){\tiny +}}
+  \put(\tmpcount,#2){\framebox(15,9){\tmp}}
+  \advance\xcount by #4
+}}
+
+\def\equalattributes#1#2#3#4{%
+  \newcount\xcount
+  \xcount=#1
+  \newcount\pluscount
+  \newcount\tmpcount
+  \newcount\mytotalcount
+  \mytotalcount=0
+  \newcount\firstcount
+  \firstcount=0
+
+  % Just to skip the first box
+  \pluscount=0
+  \advance\pluscount by #4
+  \advance\pluscount by -15
+  \tmpcount=\xcount
+  \advance\tmpcount by \number\pluscount
+  % \put(\xcount,#2){\makebox(\pluscount,9){\tiny +}}
+  % \put(\tmpcount,#2){\framebox(15,9){\tmp}}
+  \advance\xcount by #4
+
+  \@for\tmp:=#3\do{%
+    \pluscount=0
+    \advance\pluscount by #4
+    \advance\pluscount by -15
+    \tmpcount=\xcount
+    \advance\tmpcount by \number\pluscount
+    \ifnum\number\firstcount=0 
+    \put(\xcount,#2){\makebox(\pluscount,9){\tiny =}}
+    \else
+    \put(\xcount,#2){\makebox(\pluscount,9){\tiny +}}
+    \fi
+    \put(\tmpcount,#2){\framebox(15,9){$\tmp$}}
+    \advance\xcount by #4
+    \advance\mytotalcount by \tmp
+    \advance\firstcount by 1
+  }
+
+  %% reset to give the first box
+  \xcount=#1
+  \pluscount=0
+  \advance\pluscount by #4
+  \advance\pluscount by -15
+  \tmpcount=\xcount
+  \advance\tmpcount by \number\pluscount
+  \put(\tmpcount,#2){\framebox(15,9){$\number\mytotalcount$}}
+  \advance\xcount by #4
+}
+
+\def\specialequalattributes#1#2#3#4#5{%
+  \newcount\xcount
+  \xcount=#1
+  \newcount\pluscount
+  \newcount\tmpcount
+  \global\newcount#5
+  #5=0
+  \newcount\firstcount
+  \firstcount=0
+
+  % Just to skip the first box
+  \pluscount=0
+  \advance\pluscount by #4
+  \advance\pluscount by -15
+  \tmpcount=\xcount
+  \advance\tmpcount by \number\pluscount
+  % \put(\xcount,#2){\makebox(\pluscount,9){\tiny +}}
+  % \put(\tmpcount,#2){\framebox(15,9){\tmp}}
+  \advance\xcount by #4
+
+  \@for\tmp:=#3\do{%
+    \pluscount=0
+    \advance\pluscount by #4
+    \advance\pluscount by -15
+    \tmpcount=\xcount
+    \advance\tmpcount by \number\pluscount
+    \ifnum\number\firstcount=0 
+    \put(\xcount,#2){\makebox(\pluscount,9){\tiny =}}
+    \else
+    \put(\xcount,#2){\makebox(\pluscount,9){\tiny +}}
+    \fi
+    \put(\tmpcount,#2){\framebox(15,9){\tmp}}
+    \advance\xcount by #4
+    \advance#5 by \tmp
+    \advance\firstcount by 1
+  }
+
+  %% reset to give the first box
+  \xcount=#1
+  \pluscount=0
+  \advance\pluscount by #4
+  \advance\pluscount by -15
+  \tmpcount=\xcount
+  \advance\tmpcount by \number\pluscount
+  \put(\tmpcount,#2){\framebox(15,9){\the#5}}
+  \advance\xcount by #4
+}
+
+\def\strength#1{
+  \global\newcount\strengthcount
+  \strengthcount#1
+  \global\newcount\strengthmodcount
+  \strengthmodcount#1
+  \advance\strengthmodcount by -10
+  \divide \strengthmodcount by 2
+}
+\def\dexterity#1{
+  \global\newcount\dexteritycount
+  \dexteritycount#1
+  \global\newcount\dexteritymodcount
+  \dexteritymodcount#1
+  \advance\dexteritymodcount by -10
+  \divide \dexteritymodcount by 2
+}
+\def\constitution#1{
+  \global\newcount\constitutioncount
+  \constitutioncount#1
+  \global\newcount\constitutionmodcount
+  \constitutionmodcount#1
+  \advance\constitutionmodcount by -10
+  \divide \constitutionmodcount by 2
+}
+\def\intelligence#1{
+  \global\newcount\intelligencecount
+  \intelligencecount#1
+  \global\newcount\intelligencemodcount
+  \intelligencemodcount#1
+  \advance\intelligencemodcount by -10
+  \divide \intelligencemodcount by 2
+}
+\def\wisdom#1{
+  \global\newcount\wisdomcount
+  \wisdomcount#1
+  \global\newcount\wisdommodcount
+  \wisdommodcount#1
+  \advance\wisdommodcount by -10
+  \divide \wisdommodcount by 2
+}
+\def\charisma#1{
+  \global\newcount\charismacount
+  \charismacount#1
+  \global\newcount\charismamodcount
+  \charismamodcount#1
+  \advance\charismamodcount by -10
+  \divide \charismamodcount by 2
+}
+
+\def\abilitymodifier#1{
+  \newcount\tmpcount
+  \tmpcount#1
+  \advance\tmpcount by -10
+  \divide \tmpcount by 2
+ \hspace{-5\unitlength}
+  \ifnum\number\tmpcount<0
+  $\the\tmpcount$
+  \else
+  $+\the\tmpcount$
+  \fi
+}
+
+\def\numberabilitymodifier#1{
+  \newcount\tmpcount
+  \tmpcount#1
+  \advance\tmpcount by -10
+  \divide \tmpcount by 2
+  \number\tmpcount
+}
+
+
+
+\def\scaleattributes#1#2#3#4{%
+\newcount\xcount
+\xcount=#1
+\newcount\pluscount
+\newcount\tmpcount
+\@for\tmp:=#3\do{%
+  \pluscount=0
+  \advance\pluscount by #4
+  \advance\pluscount by -15
+  \tmpcount=\xcount
+  \advance\tmpcount by \number\pluscount
+  \put(\tmpcount,#2){\framebox(15,9){\tmp}}
+  \advance\xcount by #4
+}}
+
+%% Attribute box dimensions
+\newcount\boxwidth\boxwidth=15
+\newcount\boxheight\boxheight=9
+
+\def\stretchattributes#1#2#3#4{%
+\newcount\xcount
+\xcount=#1
+\newcount\stretchcount
+\stretchcount=#3
+\advance\stretchcount by -#1
+\newcount\noofentriescount
+\noofentriescount=0
+\@for\tmp:=#4\do{%
+  \advance\noofentriescount1
+}
+\advance\noofentriescount-1
+\advance\stretchcount-\boxwidth
+\divide\stretchcount by \number\noofentriescount
+\newcount\pluscount
+\newcount\tmpcount
+\@for\tmp:=#4\do{%
+  \ifnum\number\xcount=#1
+  \pluscount=0
+  \else
+  \pluscount=0
+  \advance\pluscount by \stretchcount
+  \advance\pluscount by -15
+  \fi
+  \tmpcount=\xcount
+  \advance\tmpcount by \number\pluscount
+  \put(\tmpcount,#2){\framebox(\boxwidth,\boxheight){\tmp}}
+  \ifnum\number\pluscount=0
+  \advance\xcount by \boxwidth
+  \else
+  \advance\xcount by \stretchcount
+  \fi
+}}
+
+
+
+\newcount\labelheight
+\labelheight=3
+\newcount\labelwidth
+\labelwidth=\number\boxwidth
+\advance\labelwidth4
+
+\def\stretchlabels#1#2#3#4{%
+\newcount\xcount
+\xcount=#1
+\newcount\stretchcount
+\stretchcount=#3
+\advance\stretchcount by -#1
+\newcount\noofentriescount
+\noofentriescount=0
+\@for\tmp:=#4\do{%
+  \advance\noofentriescount1
+}
+\advance\noofentriescount-1
+\advance\stretchcount-\boxwidth
+\divide\stretchcount by \number\noofentriescount
+\newcount\pluscount
+\newcount\tmpcount
+\@for\tmp:=#4\do{%
+  \ifnum\number\xcount=#1
+  \pluscount=0
+  \else
+  \pluscount=0
+  \advance\pluscount by \stretchcount
+  \advance\pluscount by -15
+  \fi
+  \tmpcount=\xcount
+  \advance\tmpcount by \number\pluscount
+  \newcount\leftabitcount
+  \leftabitcount=\tmpcount
+  \advance\leftabitcount by -2  \put(\leftabitcount,#2){\parbox[b][\number\labelheight\unitlength][c]{\number\labelwidth\unitlength}{\centering\lfont \tmp}}
+  \ifnum\number\pluscount=0
+  \advance\xcount by \boxwidth
+  \else
+  \advance\xcount by \stretchcount
+  \fi
+}}
+
+
+
+\def\attributelabels#1#2#3{%
+\count@#1
+\newcount\xcount\xcount=#1
+\newcount\tmpcount
+\@for\tmp:=#3\do{%
+  \tmpcount=\xcount
+  \advance\tmpcount-4
+\put(\tmpcount,#2){\parbox[b][9\unitlength][b]{24\unitlength}{\lfont\centering\tmp}}%
+\advance\xcount18
+}}
+
+
+
+\def\stretchequalattributes#1#2#3#4{%
+  \newcount\xcount
+  \xcount=#1
+  \newcount\stretchcount
+  \stretchcount=#3
+  \advance\stretchcount by -#1
+  \newcount\firstcount
+  \firstcount=0
+  \newcount\noofentriescount
+  \noofentriescount=0
+  \@for\tmp:=#4\do{%
+    \advance\noofentriescount1
+  }
+  % \advance\noofentriescount-1
+  \advance\stretchcount-\boxwidth
+  \divide\stretchcount by \number\noofentriescount %stretchcount completed
+  \newcount\pluscount
+  \newcount\tmpcount
+  \newcount\totalcount\totalcount=0
+
+  \ifnum\number\xcount=#1
+  \pluscount=0
+  \else
+  \pluscount=0
+  \advance\pluscount by \stretchcount
+  \advance\pluscount by -15
+  \fi
+  \tmpcount=\xcount
+  \advance\tmpcount by \number\pluscount
+  \ifnum\number\pluscount=0
+  \advance\xcount by \boxwidth
+  \else
+  \advance\xcount by \stretchcount
+  \fi
+  \advance\firstcount1
+  % \advance\totalcount by \numberfoo
+
+  \@for\tmp:=#4\do{%
+    \ifnum\number\xcount=#1
+    \pluscount=0
+    \else
+    \pluscount=0
+    \advance\pluscount by \stretchcount
+    \advance\pluscount by -15
+    \fi
+    \tmpcount=\xcount
+    \advance\tmpcount by \number\pluscount
+    \ifnum\number\firstcount=0
+    \else
+    \put(\tmpcount,#2){\framebox(\boxwidth,\boxheight){\tmp}}
+    \fi
+    \ifnum\number\firstcount=1 
+    \put(\xcount,#2){\makebox(\pluscount,9){\tiny =}}
+    \else
+    \ifnum\number\firstcount=0
+    \else
+    \put(\xcount,#2){\makebox(\pluscount,9){\tiny +}}
+    \fi
+    \fi
+    \ifnum\number\pluscount=0
+    \advance\xcount by \boxwidth
+    \else
+    \advance\xcount by \stretchcount
+    \fi
+    \advance\firstcount1
+    \advance\totalcount by \number\tmp
+  }
+  \put(#1,#2){\framebox(\boxwidth,\boxheight){\number\totalcount}}
+}
+
+\def\attributelabels#1#2#3{%
+\count@#1
+\newcount\xcount\xcount=#1
+\newcount\tmpcount
+\@for\tmp:=#3\do{%
+  \tmpcount=\xcount
+  \advance\tmpcount-4
+\put(\tmpcount,#2){\parbox[b][9\unitlength][b]{24\unitlength}{\lfont\centering\tmp}}%
+\advance\xcount18
+}}
+
+
+\def\scaleattributelabels#1#2#3#4{%
+\newcount\xcount
+\xcount=#1
+\newcount\pluscount
+\newcount\tmpcount
+\@for\tmp:=#3\do{%
+  \pluscount=0
+  \advance\pluscount by #4
+  \advance\pluscount by -15
+  \tmpcount=\xcount
+  \advance\tmpcount by \number\pluscount
+  \advance\tmpcount by -1
+\put(\tmpcount,#2){\parbox[b][9\unitlength][c]{17\unitlength}{\lfont\centering\tmp}}
+  \advance\xcount by #4
+}}
+
+\def\titlebox#1#2#3#4#5{
+  \newcount\ycount\ycount#2
+  \newcount\hcount\hcount=10
+  \newcount\wcount\wcount=#3
+  \newcount\downabitcount
+  \downabitcount=#2
+  \advance\downabitcount-1
+  \put(#1,\downabitcount){\setlength\fboxsep{0pt}\colorbox{black!100}{\makebox(#3,11){}}}%
+  \advance\ycount1
+  \put(#1,\ycount){\makebox(#3,\hcount){\color{white}{\uppercase{#4}}}}
+  \advance\hcount-7
+  \advance\ycount-1
+  \put(#1,\ycount){\makebox(#3,\hcount){\color{white}{\tiny\scshape #5}}}
+}
+
+\makeatother
+\newcolumntype{A}[1]{@{}>{\centering\footnotesize}m{#1\unitlength}@{}}
+\newcolumntype{B}[1]{@{}>{\footnotesize\scshape}m{#1\unitlength}@{}}
+\newcolumntype{D}[1]{>{\itshape}p{#1\unitlength}}
+\newcolumntype{E}[1]{@{}>{\lfont\raggedleft}b{#1\unitlength}@{}}
+\newcolumntype{F}[1]{@{\hspace{-0.5ex}}>{\small\raggedleft}m{#1\unitlength}@{\hspace{0.5ex}}}
+
+\newcommand\weapontable[9]{
+  \put(#1,#2){\begin{tabular}[b]{A{20}A{30}A{75}A{45}A{25}@{}l@{}}\toprule
+      \multicolumn{3}{A{125}}{\tiny\scshape WEAPON} &\tiny\scshape  attack bonus &\tiny\scshape  critical & \tabularnewline\hline
+      \multicolumn{3}{A{125}}{\itshape #3} & $#4$ &  $#5$ &\tabularnewline[6\unitlength]
+      \tiny\scshape type & \tiny\scshape range & \tiny\scshape ammunition & \multicolumn{2}{A{76}}{\tiny\scshape damage} & \tabularnewline\hline
+      \itshape #6 &  $#7$ & \itshape #8 & \multicolumn{2}{A{76}}{$#9$} & \tabularnewline\bottomrule
+    \end{tabular}}
+}
+
+\newcommand\skill[7]{
+  \newcount\tmpcount\tmpcount=0
+  \advance\tmpcount\number#5
+  \advance\tmpcount#6
+  \advance\tmpcount#7
+  \put(#1,#2){
+  \begin{tabular}[b]{A{10}B{100}A{14}B{20}A{14}A{8}A{14}A{8}A{14}}
+    $\square$ &  #3 & \ifnum\number\tmpcount<0 $\number\tmpcount$ \else $+\number\tmpcount$ \fi & $=$ #4 & $\number#5$ & $+$ & $#6$ &  $+$ & $#7$ \tabularnewline\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}
+  \end{tabular}}
+}
+\newcommand\classskill[7]{
+  \newcount\tmpcount\tmpcount=0
+  \advance\tmpcount\number#5
+  \advance\tmpcount#6
+  \advance\tmpcount#7
+  \put(#1,#2){
+  \begin{tabular}[b]{A{10}B{100}A{14}B{20}A{14}A{8}A{14}A{8}A{14}}
+    $\cancel\square$ &  #3 & \ifnum\number\tmpcount<0 $\number\tmpcount$ \else $+\number\tmpcount$ \fi & $=$ #4 & $\number#5$ & $+$ & $#6$ &  $+$ & $#7$ \tabularnewline\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}
+  \end{tabular}}
+}
+
+\newcommand\trainskill[7]{
+  \put(#1,#2){
+  \begin{tabular}[b]{A{10}B{100}A{14}B{20}A{14}A{8}A{14}A{8}A{14}}
+    $\square$ &  #3* & $+0$ & $=$ #4 & $\number#5$ & $+$ & $#6$ &  $+$ & $#7$ \tabularnewline\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}
+  \end{tabular}}
+}
+
+\newcommand\charname{Tralguth}
+\newcommand\charlevel{Level 1 Witch}
+\newcommand\charplayer{Nathanael}
+\newcommand\charalignment{TN}
+\newcommand\chardiety{None}
+\newcommand\charrace{Half-orc}
+\newcommand\charhomeland{??}
+\newcommand\charsize{Medium}
+\newcommand\chargender{m}
+\newcommand\charage{30}
+\newcommand\charheight{7 ft.}
+\newcommand\charweight{140~kg}
+\newcommand\charhair{Blue}
+\newcommand\chareyes{Grey}
+\newcommand\charlanguagesspoken{Common, Orc}
+
+\begin{document}
+\strength{14}
+\dexterity{10}
+\constitution{14}
+\intelligence{17}
+\wisdom{6}
+\charisma{10}
+
+\unitlength\textwidth
+\divide\unitlength 420
+
+\noindent\begin{picture}(420,594)
+
+  % \put(0,0){\framebox(420,594)}
+
+  \put(130,530){\renewcommand{\arraystretch}{1.5}
+    \begin{tabular}[b]{D{46} D{23}  D{23}  D{23}  D{23}  D{23}  D{23}  D{23} }
+      \multicolumn{3}{D{69}}{\charname} & \charalignment & \multicolumn{4}{D{92}}{\charplayer} \\\cmidrule(rl){1-3}\cmidrule(rl){4-4}\cmidrule(rl){5-8}
+      \multicolumn{4}{D{92}}{\charlevel} &\multicolumn{2}{D{46}}{\chardiety} & \multicolumn{2}{D{46}}{\charhomeland} \\\cmidrule(rl){1-4}\cmidrule(rl){5-6}\cmidrule(rl){7-8}
+      \charrace & \charsize & \chargender & \charage & \charheight & \charweight & \charhair & \chareyes \\\cmidrule(rl){1-1}\cmidrule(rl){2-2}\cmidrule(rl){3-3}\cmidrule(rl){4-4}\cmidrule(rl){5-5}\cmidrule(rl){6-6}\cmidrule(rl){7-7}\cmidrule(rl){8-8}
+    \end{tabular}}
+  \put(130,529){\renewcommand{\arraystretch}{1.9}
+    \begin{tabular}[b]{D{46} D{23}  D{23}  D{23}  D{23}  D{23}  D{23}  D{23} }
+      \multicolumn{3}{D{69}}{\lfont character name} & \lfont alignment & \multicolumn{4}{D{92}}{\lfont player name} \\
+      \multicolumn{4}{D{92}}{\lfont character level} &\multicolumn{2}{D{46}}{\lfont deity} & \multicolumn{2}{D{46}}{\lfont homeland} \\
+      \lfont race & \lfont size & \lfont gender & \lfont age & \lfont height & \lfont weight & \lfont hair & \lfont eyes \\
+    \end{tabular}}
+
+  %% Labels
+  \put(0,512){\makebox(28,3){\tiny\scshape attribute}}
+  % \attributelabels{33}{512}{ability\\ score, ability modifier, Temp Adjustment, Temp\\Modifier}
+  \stretchlabels{33}{512}{102}{ability score,  ability modifier, Temp Adjustment, Temp Modifier}
+  %% STR
+  \titlebox{0}{500}{28}{STR}{strength}
+  \stretchattributes{33}{500}{102}{\the\strengthcount,\abilitymodifier{\strengthcount},0,0}
+
+  %% DEX
+  \titlebox{0}{488}{28}{DEX}{dexterity}
+  \stretchattributes{33}{488}{102}{\the\dexteritycount,\abilitymodifier{\dexteritycount},0,0}
+  
+  %% CON
+  \titlebox{0}{476}{28}{CON}{constitution}
+  \stretchattributes{33}{476}{102}{\the\constitutioncount,\abilitymodifier{\constitutioncount},0,0}
+  
+  %% INT
+  \titlebox{0}{464}{28}{INT}{intelligence}
+  \stretchattributes{33}{464}{102}{\the\intelligencecount,\abilitymodifier{\intelligencecount},0,0}
+
+  %% WIS
+  \titlebox{0}{452}{28}{WIS}{wisdom}
+  \stretchattributes{33}{452}{102}{\the\wisdomcount,\abilitymodifier{\wisdomcount},0,0}
+
+
+  %% CHA
+  \titlebox{0}{440}{28}{CHA}{charisma}
+  \stretchattributes{33}{440}{102}{\the\charismacount,\abilitymodifier{\charismacount},0,0}
+
+
+  %% HP
+  \put(107,505){\framebox(26,12){}}
+  \put(107,508){\makebox(26,9){HP}}
+  \put(107,506){\makebox(26,3){\tiny\scshape hit points}}
+  \put(137,505){\framebox(38,12){}}
+  \put(137,512){\makebox(14,4){\tiny\scshape Total}}
+  \put(137,505){\parbox[b][12\unitlength][c]{36\unitlength}{\raggedleft 6}}
+  \put(177,505){\framebox(28,12){}}
+  \put(177,512){\makebox(8,4){\tiny\scshape DR}}
+
+  %% little boxes
+  \put(107,500){\makebox(36,4){\tiny\scshape wounds/current hp}}
+  \put(107,480){\framebox(98,20){}}
+  \put(109,480){\parbox[b][18\unitlength][t]{82\unitlength}{\tiny blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah }}
+  \put(107,475){\makebox(36,4){\tiny\scshape nonleathal damage}}
+  \put(107,455){\framebox(98,20){}}
+  
+  %% INIT
+  \titlebox{107}{440}{43}{INITIATIVE}{modifier}
+  \scaleattributes{151}{440}{0,0,0}{18}
+  \put(169,440){\makebox(3,10){\tiny =}}
+  \put(187,440){\makebox(3,10){\tiny +}}
+  
+  %% AC
+  \titlebox{0}{420}{27}{AC}{armour class}
+ % \attributes{34}{420}{0}
+ % \put(50,420){\makebox(3,10){\tiny =}}
+%  \put(53,420){\makebox(13,10){10}}
+%  \plusattributes{65}{420}{0,0,0,0,0,0,0}{20}
+  \equalattributes{25}{420}{10,0,0,0,0,0,0,0}{20}
+  \scaleattributelabels{25}{410}{TOTAL,default, armor bonus,shield bonus,dex \mbox{modifier},size \mbox{modifier},natural armour,\mbox{deflection} \mbox{modifier},misc \mbox{modifier}}{20}
+
+  %% Touch, Flat footed
+  \titlebox{0}{400}{35}{TOUCH}{armour class}
+  \attributes{40}{400}{0}
+  \titlebox{60}{400}{55}{FLAT-FOOTED}{armour class}
+  \attributes{120}{400}{0} 
+  \put(140,400){\framebox(65,9){}}
+  \put(140,400){\parbox[b][8\unitlength][t]{65\unitlength}{\raggedleft \lfont modifiers}}
+
+  %% fort, reflex and will
+  \stretchlabels{60}{392}{205}{TOTAL, base save, ability modifier, magic modifier, misc modifier, temporary modifier}
+  \titlebox{0}{380}{53}{fortitude}{(Constitution)}
+  \stretchequalattributes{60}{380}{205}{0,\number\constitutionmodcount,0,0,0}
+  \titlebox{0}{365}{53}{reflex}{(dexterity)}
+  \stretchequalattributes{60}{365}{205}{0,\number\dexteritymodcount,0,0,0}
+  \titlebox{0}{350}{53}{will}{(wisdom)}  
+  \stretchequalattributes{60}{350}{205}{0,\number\wisdommodcount,0,0,0}
+
+  %%Base attack bonus, spell resistance
+  \put(0,329){\framebox(90,11){BASE ATTACK BONUS}}
+  \attributes{94}{330}{0}
+  \put(113,329){\framebox(74,11){SPELL RESISTANCE}}
+  \attributes{190}{330}{0}
+  
+
+  \put(0,309){\framebox(21,11){CMB}}
+  \stretchequalattributes{25}{310}{130}{0,\number\strengthmodcount,0}
+  \stretchlabels{25}{304}{130}{TOTAL, \mbox{base attack} bonus,strength modifier, size modifier}
+  \put(0,289){\framebox(20,11){CMD}}
+ \stretchequalattributes{25}{290}{130}{0,\number\strengthmodcount,\number\dexteritymodcount,0,10}
+  \stretchlabels{25}{284}{130}{TOTAL, \mbox{base attack} bonus,strength modifier,dexterity modifier, size modifier,default}
+
+  \put(135,284){\framebox(25,35){\uppercase{Speed}}}
+  \put(165,310){\framebox(40,\boxheight){}}
+  \put(165,311){\begin{tabular}[b]{F{17}E{2}F{16}E{2}}0 &ft. & 0& sq.\end{tabular}}
+  \put(165,307){\parbox[b][3\unitlength][b]{40\unitlength}{\centering\lfont base speed}}
+  \put(165,297){\framebox(40,\boxheight){}}
+  \put(165,298){\begin{tabular}[b]{F{17}E{2}F{16}E{2}}0 &ft. & 0& sq.\end{tabular}}
+  \put(165,294){\parbox[b][3\unitlength][b]{40\unitlength}{\centering\lfont with armour}}
+  \put(165,284){\framebox(40,\boxheight){}}
+  \put(165,285){\begin{tabular}[b]{F{17}E{2}@{\hspace{1ex}/\hspace{-1.6ex}}F{16}E{2}}0 &ft. & 0& \end{tabular}}
+  \put(165,281){\parbox[b][3\unitlength][b]{40\unitlength}{\lfont\centering fly/manoeuvrability}}
+  \put(135,271){\framebox(20,\boxheight){}}
+  \put(135,272){\begin{tabular}[b]{F{16}E{2}}0 &ft.\end{tabular}}
+  \put(135,267){\parbox[b][3\unitlength][b]{20\unitlength}{\centering\lfont swim}}
+  \put(160,271){\framebox(20,\boxheight){}}
+  \put(160,272){\begin{tabular}[b]{F{16}E{2}}0 &ft.\end{tabular}}
+  \put(160,267){\parbox[b][3\unitlength][b]{20\unitlength}{\centering\lfont climb}}
+  \put(185,271){\framebox(20,\boxheight){}}
+  \put(185,272){\begin{tabular}[b]{F{16}E{2}}0 &ft.\end{tabular}}
+  \put(185,267){\parbox[b][3\unitlength][b]{20\unitlength}{\centering\lfont burrow}}
+  \titlebox{0}{271}{50}{favourite}{meal}
+  \put(55,271){\framebox(75,\boxheight){\footnotesize Meat}}
+  \weapontable{0}{210}{null}{null}{null}{null}{null}{null}{null}
+  \weapontable{0}{158}{null}{null}{null}{null}{null}{null}{null}
+  \weapontable{0}{106}{null}{null}{null}{null}{null}{null}{null}
+  \weapontable{0}{54}{null}{null}{null}{null}{null}{null}{null}
+  \weapontable{0}{2}{null}{null}{null}{null}{null}{null}{null}
+
+
+  \put(210,510){
+  \begin{tabular}[b]{A{10}B{100}A{14}B{20}A{14}A{8}A{14}A{8}A{14}}
+     &\footnotesize \scshape Skill Names   &\lfont Total Bonus& &\lfont Ability Mod. &  &\lfont Ranks &  &\lfont Misc.\ Mod.\ \tabularnewline\hline
+  \end{tabular}}
+
+
+  \skill{210}{500}{Acrobatics}{Dex}{\dexteritymodcount}{0}{0}
+  \skill{210}{490}{Appraise}{Int}{\intelligencemodcount}{0}{0}
+  \skill{210}{480}{Bluff}{Cha}{\charismamodcount}{0}{0}
+  \skill{210}{470}{Climb}{Str}{\strengthmodcount}{0}{0}
+  \skill{210}{460}{Craft (optional)}{Int}{\intelligencemodcount}{0}{0}
+  \skill{210}{450}{Craft (optional)}{Int}{\intelligencemodcount}{0}{0}
+  \skill{210}{440}{Craft (optional)}{Int}{\intelligencemodcount}{0}{0}
+  \skill{210}{430}{Diplomacy }{Cha}{\charismamodcount}{0}{0}
+  \trainskill{210}{420}{Disable Device}{Dex}{\dexteritymodcount}{0}{0}
+  \skill{210}{410}{Disguise}{Cha}{\charismamodcount}{0}{0}
+  \skill{210}{400}{Escape Artist}{Dex}{\dexteritymodcount}{0}{0}
+  \skill{210}{390}{Fly}{Dex}{\dexteritymodcount}{0}{0}
+  \trainskill{210}{380}{Handle Animal}{Cha}{\wisdommodcount}{0}{0}
+  \skill{210}{370}{Heal}{Wis}{\wisdommodcount}{0}{0}
+  \skill{210}{360}{Intimidate}{Cha}{\charismamodcount}{0}{0}
+  \trainskill{210}{350}{Knowledge (arcana)}{Int}{\intelligencemodcount}{0}{0}
+  \trainskill{210}{340}{Knowledge (dungeoneering)}{Int}{\intelligencemodcount}{0}{0}
+  \trainskill{210}{330}{Knowledge (engineering)}{Int}{\intelligencemodcount}{0}{0}
+  \trainskill{210}{320}{Knowledge (geography)}{Int}{\intelligencemodcount}{0}{0}
+  \trainskill{210}{310}{Knowledge (history)}{Int}{\intelligencemodcount}{0}{0}
+  \trainskill{210}{300}{Knowledge (local)}{Int}{\intelligencemodcount}{0}{0}
+  \trainskill{210}{290}{Knowledge (nature)}{Int}{\intelligencemodcount}{0}{0}
+  \trainskill{210}{280}{Knowledge (nobility)}{Int}{\intelligencemodcount}{0}{0}
+  \trainskill{210}{270}{Knowledge (planes)}{Int}{\intelligencemodcount}{0}{0}
+  \trainskill{210}{260}{Knowledge (religion)}{Int}{\intelligencemodcount}{0}{0}
+  \trainskill{210}{250}{Linguistics}{Int}{\intelligencemodcount}{0}{0}
+  \skill{210}{240}{Perception}{Wis}{\wisdommodcount}{0}{0}
+  \skill{210}{230}{Perform (optional)}{Cha}{\charismamodcount}{0}{0}
+  \skill{210}{220}{Perform (optional)}{Cha}{\charismamodcount}{0}{0}
+  \trainskill{210}{210}{Profession (optional)}{Wis}{\wisdommodcount}{0}{0}
+  \trainskill{210}{200}{Profession (optional)}{Wis}{\wisdommodcount}{0}{0}
+  \skill{210}{190}{Ride}{Dex}{\dexteritymodcount}{0}{0}
+  \skill{210}{180}{Sense Motive}{Wis}{\wisdommodcount}{0}{0}
+  \trainskill{210}{170}{Sleight of Hand}{Dex}{\dexteritymodcount}{0}{0}
+  \trainskill{210}{160}{Spellcraft}{Int}{\intelligencemodcount}{0}{0}
+  \skill{210}{150}{Stealth}{Dex}{\dexteritymodcount}{0}{0}
+  \skill{210}{140}{Survival}{Wis}{\wisdommodcount}{0}{0}
+  \skill{210}{130}{Swim}{Str}{\strengthmodcount}{0}{0}
+  \trainskill{210}{120}{Use Magic Device}{Cha}{\charismamodcount}{0}{0}
+  \put(214.5,110){\parbox[b][10\unitlength][c]{100\unitlength}{ \tiny\scshape $\footnotesize\cancel\square$  Class Skill\hspace{2ex} * trained only}}
+
+  \put(215,100){\parbox[b][10\unitlength][c]{200\unitlength}{\small\scshape Conditional Modifiers:}}
+  \put(215,55){\parbox[b][43\unitlength][t]{200\unitlength}{\itshape blah blah blah  blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah}}
+  \put(211,55){\framebox(207,45){}}
+  \put(215,40){\parbox[b][10\unitlength][c]{100\unitlength}{\small\scshape Languages Spoken:}}
+  \put(215,0){\parbox[b][38\unitlength][t]{100\unitlength}{\itshape \charlanguagesspoken }}
+  \put(211,0){\framebox(207,40){}}
+
+\end{picture}
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
+
+
+

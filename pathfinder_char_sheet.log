@@ -1,0 +1,585 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.1)  3 FEB 2013 20:18
+entering extended mode
+**\input pathfinder_char_sheet.tex
+(c:\Users\nfarley88\Dropbox\git\rpg-char-sheet-latex\pathfinder_char_sheet.tex
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\mathptmx.sty"
+Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+)
+(C:\Users\nfarley88\AppData\Roaming\MiKTeX\2.9\tex\latex\anyfontsize\anyfontsiz
+e.sty
+Package: anyfontsize 2007/11/22 anyfontsize.sty by pts
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen111
+\extrarowheight=\dimen112
+\NC@list=\toks16
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+\TX@col@width=\dimen113
+\TX@old@table=\dimen114
+\TX@old@col=\dimen115
+\TX@target=\dimen116
+\TX@delta=\dimen117
+\TX@cols=\count90
+\TX@ftn=\toks17
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2009/06/22 v3.00
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks18
+\symAMSa=\mathgroup6
+\symAMSb=\mathgroup7
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(C:\Users\nfarley88\AppData\Roaming\MiKTeX\2.9\tex\latex\booktabs\booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen118
+\lightrulewidth=\dimen119
+\cmidrulewidth=\dimen120
+\belowrulesep=\dimen121
+\belowbottomsep=\dimen122
+\aboverulesep=\dimen123
+\abovetopsep=\dimen124
+\cmidrulesep=\dimen125
+\cmidrulekern=\dimen126
+\defaultaddspace=\dimen127
+\@cmidla=\count91
+\@cmidlb=\count92
+\@aboverulesep=\dimen128
+\@belowrulesep=\dimen129
+\@thisruleclass=\count93
+\@lastruleclass=\count94
+\@thisrulewidth=\dimen130
+) (C:\Users\nfarley88\AppData\Roaming\MiKTeX\2.9\tex\latex\dashrule\dashrule.st
+y
+Package: dashrule 2009/08/09 v1.2 Dashed rules
+(C:\Users\nfarley88\AppData\Roaming\MiKTeX\2.9\tex\latex\ifmtarg\ifmtarg.sty
+Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
+)
+\c@hdr@segments=\count95
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\misc\etex.sty"
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count96
+)
+(C:\Users\nfarley88\AppData\Roaming\MiKTeX\2.9\tex\latex\cancel\cancel.sty
+Package: cancel 2000/03/12 v2.1 Cancel math terms
+)
+(C:\Users\nfarley88\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count97
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+\boxwidth=\count98
+\boxheight=\count99
+\labelheight=\count100
+\labelwidth=\count101
+
+
+LaTeX Warning: Unused global option(s):
+    [9pt].
+
+No file pathfinder_char_sheet.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 494.
+LaTeX Font Info:    ... okay on input line 494.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 494.
+LaTeX Font Info:    ... okay on input line 494.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 494.
+LaTeX Font Info:    ... okay on input line 494.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 494.
+LaTeX Font Info:    ... okay on input line 494.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 494.
+LaTeX Font Info:    ... okay on input line 494.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 494.
+LaTeX Font Info:    ... okay on input line 494.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 494.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(28.45274pt, 540.60239pt, 28.45274pt)
+* v-part:(T,H,B)=(28.45274pt, 788.14136pt, 28.45274pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=540.60239pt
+* \textheight=788.14136pt
+* \oddsidemargin=-43.81725pt
+* \evensidemargin=-43.81725pt
+* \topmargin=-80.81725pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=18.06749pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\big@size=\dimen131
+(C:\Users\nfarley88\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count102
+\scratchdimen=\dimen132
+\scratchbox=\box26
+\nofMPsegments=\count103
+\nofMParguments=\count104
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count105
+\MPscratchDim=\dimen133
+\MPnumerator=\count106
+\makeMPintoPDFobject=\count107
+\everyMPtoPDFconversion=\toks20
+)
+\strengthcount=\count108
+\strengthmodcount=\count109
+\dexteritycount=\count110
+\dexteritymodcount=\count111
+\constitutioncount=\count112
+\constitutionmodcount=\count113
+\intelligencecount=\count114
+\intelligencemodcount=\count115
+\wisdomcount=\count116
+\wisdommodcount=\count117
+\charismacount=\count118
+\charismamodcount=\count119
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 51
+4.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ztmcm.fd"
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 51
+4.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omlztmcm.fd"
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 51
+4.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsztmcm.fd"
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 51
+4.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omxztmcm.fd"
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 514.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 514.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 514.
+
+Overfull \hbox (3.16554pt too wide) in paragraph at lines 514--514
+[]|\OT1/ptm/m/it/10 Medium| 
+ []
+
+\xcount=\count120
+\stretchcount=\count121
+\noofentriescount=\count122
+\pluscount=\count123
+\tmpcount=\count124
+\leftabitcount=\count125
+\leftabitcount=\count126
+\leftabitcount=\count127
+\leftabitcount=\count128
+\ycount=\count129
+\hcount=\count130
+\wcount=\count131
+\downabitcount=\count132
+\xcount=\count133
+\stretchcount=\count134
+\noofentriescount=\count135
+\pluscount=\count136
+\tmpcount=\count137
+\tmpcount=\count138
+\ycount=\count139
+\hcount=\count140
+\wcount=\count141
+\downabitcount=\count142
+\xcount=\count143
+\stretchcount=\count144
+\noofentriescount=\count145
+\pluscount=\count146
+\tmpcount=\count147
+\tmpcount=\count148
+\ycount=\count149
+\hcount=\count150
+\wcount=\count151
+\downabitcount=\count152
+\xcount=\count153
+\stretchcount=\count154
+\noofentriescount=\count155
+\pluscount=\count156
+\tmpcount=\count157
+\tmpcount=\count158
+\ycount=\count159
+\hcount=\count160
+\wcount=\count161
+\downabitcount=\count162
+\xcount=\count163
+\stretchcount=\count164
+\noofentriescount=\count165
+\pluscount=\count166
+\tmpcount=\count167
+\tmpcount=\count168
+\ycount=\count169
+\hcount=\count170
+\wcount=\count171
+\downabitcount=\count172
+\xcount=\count173
+\stretchcount=\count174
+\noofentriescount=\count175
+\pluscount=\count176
+\tmpcount=\count177
+\tmpcount=\count178
+\ycount=\count179
+\hcount=\count180
+\wcount=\count181
+\downabitcount=\count182
+\xcount=\count183
+\stretchcount=\count184
+\noofentriescount=\count185
+\pluscount=\count186
+\tmpcount=\count187
+\tmpcount=\count188
+\ycount=\count189
+\hcount=\count190
+\wcount=\count191
+\downabitcount=\count192
+\xcount=\count193
+\pluscount=\count194
+\tmpcount=\count195
+\ycount=\count196
+\hcount=\count197
+\wcount=\count198
+\downabitcount=\count199
+\xcount=\count200
+\pluscount=\count201
+\tmpcount=\count202
+\mytotalcount=\count203
+\firstcount=\count204
+\xcount=\count205
+\pluscount=\count206
+\tmpcount=\count207
+\ycount=\count208
+\hcount=\count209
+\wcount=\count210
+\downabitcount=\count211
+\xcount=\count212
+\ycount=\count213
+\hcount=\count214
+\wcount=\count215
+\downabitcount=\count216
+\xcount=\count217
+\xcount=\count218
+\stretchcount=\count219
+\noofentriescount=\count220
+\pluscount=\count221
+\tmpcount=\count222
+\leftabitcount=\count223
+\leftabitcount=\count224
+\leftabitcount=\count225
+\leftabitcount=\count226
+\leftabitcount=\count227
+\leftabitcount=\count228
+\ycount=\count229
+\hcount=\count230
+\wcount=\count231
+\downabitcount=\count232
+\xcount=\count233
+Normal \count register pool exhausted, switching to extended pool.
+\stretchcount=\count277
+\firstcount=\count278
+\noofentriescount=\count279
+\pluscount=\count280
+\tmpcount=\count281
+\totalcount=\count282
+\ycount=\count283
+\hcount=\count284
+\wcount=\count285
+\downabitcount=\count286
+\xcount=\count287
+\stretchcount=\count288
+\firstcount=\count289
+\noofentriescount=\count290
+\pluscount=\count291
+\tmpcount=\count292
+\totalcount=\count293
+\ycount=\count294
+\hcount=\count295
+\wcount=\count296
+\downabitcount=\count297
+\xcount=\count298
+\stretchcount=\count299
+\firstcount=\count300
+\noofentriescount=\count301
+\pluscount=\count302
+\tmpcount=\count303
+\totalcount=\count304
+\xcount=\count305
+\xcount=\count306
+\xcount=\count307
+\stretchcount=\count308
+\firstcount=\count309
+\noofentriescount=\count310
+\pluscount=\count311
+\tmpcount=\count312
+\totalcount=\count313
+\xcount=\count314
+\stretchcount=\count315
+\noofentriescount=\count316
+\pluscount=\count317
+\tmpcount=\count318
+\leftabitcount=\count319
+\leftabitcount=\count320
+\leftabitcount=\count321
+\leftabitcount=\count322
+\xcount=\count323
+\stretchcount=\count324
+\firstcount=\count325
+\noofentriescount=\count326
+\pluscount=\count327
+\tmpcount=\count328
+\totalcount=\count329
+\xcount=\count330
+\stretchcount=\count331
+\noofentriescount=\count332
+\pluscount=\count333
+\tmpcount=\count334
+\leftabitcount=\count335
+\leftabitcount=\count336
+\leftabitcount=\count337
+\leftabitcount=\count338
+\leftabitcount=\count339
+\leftabitcount=\count340
+
+Overfull \hbox (2.48965pt too wide) in paragraph at lines 617--617
+ []|\OT1/ptm/m/sc/4 ft.|
+ []
+
+
+Overfull \hbox (3.10963pt too wide) in paragraph at lines 617--617
+ []|\OT1/ptm/m/sc/4 sq.|
+ []
+
+
+Overfull \hbox (2.48965pt too wide) in paragraph at lines 620--620
+ []|\OT1/ptm/m/sc/4 ft.|
+ []
+
+
+Overfull \hbox (3.10963pt too wide) in paragraph at lines 620--620
+ []|\OT1/ptm/m/sc/4 sq.|
+ []
+
+
+Overfull \hbox (2.48965pt too wide) in paragraph at lines 623--623
+ []|\OT1/ptm/m/sc/4 ft.|
+ []
+
+
+Overfull \hbox (2.48965pt too wide) in paragraph at lines 626--626
+ []|\OT1/ptm/m/sc/4 ft.|
+ []
+
+
+Overfull \hbox (2.48965pt too wide) in paragraph at lines 629--629
+ []|\OT1/ptm/m/sc/4 ft.|
+ []
+
+
+Overfull \hbox (2.48965pt too wide) in paragraph at lines 632--632
+ []|\OT1/ptm/m/sc/4 ft.|
+ []
+
+\ycount=\count341
+\hcount=\count342
+\wcount=\count343
+\downabitcount=\count344
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 636.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 636.
+\tmpcount=\count345
+\tmpcount=\count346
+\tmpcount=\count347
+\tmpcount=\count348
+\tmpcount=\count349
+\tmpcount=\count350
+\tmpcount=\count351
+\tmpcount=\count352
+\tmpcount=\count353
+\tmpcount=\count354
+\tmpcount=\count355
+\tmpcount=\count356
+\tmpcount=\count357
+\tmpcount=\count358
+\tmpcount=\count359
+\tmpcount=\count360
+\tmpcount=\count361
+\tmpcount=\count362
+\tmpcount=\count363
+\tmpcount=\count364
+\tmpcount=\count365
+
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 68
+8.
+
+[1
+
+{C:/Users/nfarley88/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+(c:\Users\nfarley88\Dropbox\git\rpg-char-sheet-latex\pathfinder_char_sheet.aux)
+ ) 
+Here is how much of TeX's memory you used:
+ 2698 strings out of 493921
+ 35847 string characters out of 3144864
+ 192217 words of memory out of 3000000
+ 5951 multiletter control sequences out of 15000+200000
+ 38068 words of font info for 82 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 25i,17n,35p,287b,475s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on pathfinder_char_sheet.pdf (1 page, 62938 bytes).
+PDF statistics:
+ 31 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
