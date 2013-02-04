@@ -12,6 +12,23 @@
 
 This class is designed to create dynamic RPG character sheets. Currently, a Pathfinder template is enclosed. This template will be used in all examples, with extensions discussed at the end.
 
+
+\section{Brief Overview}
+\label{sec:how-latex-reads}
+
+Almost all numbers in the sheet are held as counters which can be changed with the \verb=\setcounter= command as per normal. Text based variables are held in commands, and can be changed with \verb=\renewcommand=. A simple \verb=player.tex= would be
+\begin{verbatim}
+TODO this player.tex
+\end{verbatim}
+
+For those who are interested, the sheet is generated in this way:
+\begin{enumerate}
+\item All values are initalised to 0 or default values from the class file
+\item Any changes to these values are read into the template via \verb=\include{player.tex]=.
+\item The sheet is rendered.
+\end{enumerate}
+
+
 \section{Using a template}
 \label{sec:using-template}
 
