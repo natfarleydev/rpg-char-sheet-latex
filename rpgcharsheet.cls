@@ -248,6 +248,47 @@
 \newcounter{charswimcount}
 \newcounter{charusemagicdevicecount}
 
+%% Class skill counters
+\newcounter{characrobaticsclassskillcount}
+\newcounter{charappraiseclassskillcount}
+\newcounter{charbluffclassskillcount}
+\newcounter{charclimbclassskillcount}
+\newcounter{charcraftoneclassskillcount}
+\newcounter{charcrafttwoclassskillcount}
+\newcounter{charcraftthreeclassskillcount}
+\newcounter{chardiplomacyclassskillcount}
+\newcounter{chardisabledeviceclassskillcount}
+\newcounter{chardisguiseclassskillcount}
+\newcounter{charescapeartistclassskillcount}
+\newcounter{charflyclassskillcount}
+\newcounter{charhandleanimalclassskillcount}
+\newcounter{charhealclassskillcount}
+\newcounter{charintimidateclassskillcount}
+\newcounter{charknowledgearcanaclassskillcount}
+\newcounter{charknowledgedungeoneeringclassskillcount}
+\newcounter{charknowledgeengineeringclassskillcount}
+\newcounter{charknowledgegeographyclassskillcount}
+\newcounter{charknowledgehistoryclassskillcount}
+\newcounter{charknowledgelocalclassskillcount}
+\newcounter{charknowledgenatureclassskillcount}
+\newcounter{charknowledgenobilityclassskillcount}
+\newcounter{charknowledgeplanesclassskillcount}
+\newcounter{charknowledgereligionclassskillcount}
+\newcounter{charlinguisticsclassskillcount}
+\newcounter{charperceptionclassskillcount}
+\newcounter{charperformoneclassskillcount}
+\newcounter{charperformtwoclassskillcount}
+\newcounter{charprofessiononeclassskillcount}
+\newcounter{charprofessiontwoclassskillcount}
+\newcounter{charrideclassskillcount}
+\newcounter{charsensemotiveclassskillcount}
+\newcounter{charsleightofhandclassskillcount}
+\newcounter{charspellcraftclassskillcount}
+\newcounter{charstealthclassskillcount}
+\newcounter{charsurvivalclassskillcount}
+\newcounter{charswimclassskillcount}
+\newcounter{charusemagicdeviceclassskillcount}
+
 %% Skill ranks
 \newcounter{characrobaticsrankscount}
 \newcounter{charappraiserankscount}
@@ -594,31 +635,40 @@
     \end{tabular}}
 }
 
+%% Skill commands
 \newcounter{tmpskilltotalcount}
 \setcounter{tmpskilltotalcount}{0}
+
+
+\newcommand\isclassskill[1]{
+  \setcounter{#1}{1}
+}
 
 \newcommand\skillcalculate[4]{
   \setcounter{tmpskilltotalcount}{\value{#2}+\value{#3}+\value{#4}}
   \plusminus{tmpskilltotalcount} & $=$ #1 & $\arabic{#2}$ & $+$ & $\arabic{#3}$ &  $+$ & $\arabic{#4}$ \tabularnewline\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}
 }
- 
-\newcommand\skill[7]{
-  \put(#1,#2){
-  \begin{tabular}[b]{A{10}B{100}A{14}B{20}A{14}A{8}A{14}A{8}A{14}}
-    $\square$ &  #3 & \skillcalculate{#4}{#5}{#6}{#7}
-  \end{tabular}}
-}
-\newcommand\classskill[7]{
-  \put(#1,#2){
-  \begin{tabular}[b]{A{10}B{100}A{14}B{20}A{14}A{8}A{14}A{8}A{14}}
-    $\cancel\square$ &  #3 & \skillcalculate{#4}{#5}{#6}{#7}
-  \end{tabular}}
-}
 
-\newcommand\trainskill[7]{
-  \put(#1,#2){
+\newcommand\classskillbox[1]{
+  \ifthenelse{\value{#1} = 1}{$\cancel{\square}$}{$\square$}
+}
+\newcommand\skill[8]{
+  \put(#2,#3){
   \begin{tabular}[b]{A{10}B{100}A{14}B{20}A{14}A{8}A{14}A{8}A{14}}
-    $\square$ &  #3* & \skillcalculate{#4}{#5}{#6}{#7}
+    \classskillbox{#1} &  #4 & \skillcalculate{#5}{#6}{#7}{#8}
+  \end{tabular}}
+}
+% \newcommand\classskill[7]{
+%   \put(#1,#2){
+%   \begin{tabular}[b]{A{10}B{100}A{14}B{20}A{14}A{8}A{14}A{8}A{14}}
+%     $\cancel\square$ &  #3 & \skillcalculate{#4}{#5}{#6}{#7}
+%   \end{tabular}}
+% }
+
+\newcommand\trainskill[8]{
+  \put(#2,#3){
+  \begin{tabular}[b]{A{10}B{100}A{14}B{20}A{14}A{8}A{14}A{8}A{14}}
+    \classskillbox{#1} &  #4* & \skillcalculate{#5}{#6}{#7}{#8}
   \end{tabular}}
 }
 
