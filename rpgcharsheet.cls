@@ -18,7 +18,7 @@
 \RequirePackage{calc}
 \RequirePackage{ifthen}
 \ProcessOptions\relax
-\DeclareOption* {\PassOptionsToClass{\CurrentOption}{memoir}}
+\DeclareOption* {\PassOptionsToClass{\CurrentOption}{article}}
 
 
 \def\attributes#1#2#3{%
