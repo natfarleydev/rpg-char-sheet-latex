@@ -30,32 +30,31 @@
 
   %% Labels
   \put(0,512){\makebox(28,3){\tiny\scshape attribute}}
-  % \attributelabels{33}{512}{ability\\ score, ability modifier, Temp Adjustment, Temp\\Modifier}
   \stretchlabels{33}{512}{102}{ability score,  ability modifier, Temp Adjustment, Temp Modifier}
   %% STR
   \titlebox{0}{500}{28}{STR}{charstr}
-  \stretchattributes{33}{500}{102}{\the\charstrcount,\abilitymodifier{\charstrcount},0,0}
+\stretchattributes{33}{500}{102}{\arabic{charstrcount},\plusminus{charstrmodcount},0,0}
 
   %% DEX
   \titlebox{0}{488}{28}{DEX}{chardex}
-  \stretchattributes{33}{488}{102}{\the\chardexcount,\abilitymodifier{\chardexcount},0,0}
+  \stretchattributes{33}{488}{102}{\arabic{chardexcount},\plusminus{chardexmodcount},0,0}
   
   %% CON
   \titlebox{0}{476}{28}{CON}{charcon}
-  \stretchattributes{33}{476}{102}{\the\charconcount,\abilitymodifier{\charconcount},0,0}
+  \stretchattributes{33}{476}{102}{\arabic{charconcount},\plusminus{charconmodcount},0,0}
   
   %% INT
   \titlebox{0}{464}{28}{INT}{charint}
-  \stretchattributes{33}{464}{102}{\the\charintcount,\abilitymodifier{\charintcount},0,0}
+  \stretchattributes{33}{464}{102}{\arabic{charintcount},\plusminus{charintmodcount},0,0}
 
   %% WIS
   \titlebox{0}{452}{28}{WIS}{charwis}
-  \stretchattributes{33}{452}{102}{\the\charwiscount,\abilitymodifier{\charwiscount},0,0}
+  \stretchattributes{33}{452}{102}{\arabic{charwiscount},\plusminus{charwismodcount},0,0}
 
 
   %% CHA
   \titlebox{0}{440}{28}{CHA}{charcha}
-  \stretchattributes{33}{440}{102}{\the\charchacount,\abilitymodifier{\charchacount},0,0}
+  \stretchattributes{33}{440}{102}{\arabic{charchacount},\plusminus{charchamodcount},0,0}
 
 
   %% HP
@@ -101,11 +100,11 @@
   %% fort, reflex and will
   \stretchlabels{60}{392}{205}{TOTAL, base save, ability modifier, magic modifier, misc modifier, temporary modifier}
   \titlebox{0}{380}{53}{fortitude}{(Charcon)}
-  \stretchequalattributes{60}{380}{205}{0,\number\charconmodcount,0,0,0}
+  \stretchequalattributes{60}{380}{205}{0,\arabic{charconmodcount},0,0,0}
   \titlebox{0}{365}{53}{reflex}{(chardex)}
-  \stretchequalattributes{60}{365}{205}{0,\number\chardexmodcount,0,0,0}
+  \stretchequalattributes{60}{365}{205}{0,\arabic{chardexmodcount},0,0,0}
   \titlebox{0}{350}{53}{will}{(charwis)}  
-  \stretchequalattributes{60}{350}{205}{0,\number\charwismodcount,0,0,0}
+  \stretchequalattributes{60}{350}{205}{0,\arabic{charwismodcount},0,0,0}
 
   %%Base attack bonus, spell resistance
   \put(0,329){\framebox(90,11){BASE ATTACK BONUS}}
@@ -115,10 +114,10 @@
   
 
   \put(0,309){\framebox(21,11){CMB}}
-  \stretchequalattributes{25}{310}{130}{0,\number\charstrmodcount,0}
+  \stretchequalattributes{25}{310}{130}{0,\arabic{charstrmodcount},0}
   \stretchlabels{25}{304}{130}{TOTAL, \mbox{base attack} bonus,charstr modifier, size modifier}
   \put(0,289){\framebox(20,11){CMD}}
- \stretchequalattributes{25}{290}{130}{0,\number\charstrmodcount,\number\chardexmodcount,0,10}
+ \stretchequalattributes{25}{290}{130}{0,\arabic{charstrmodcount},\arabic{chardexmodcount},0,10}
   \stretchlabels{25}{284}{130}{TOTAL, \mbox{base attack} bonus,charstr modifier,chardex modifier, size modifier,default}
 
   \put(135,284){\framebox(25,35){\uppercase{Speed}}}
@@ -155,45 +154,45 @@
   \end{tabular}}
 
 
-  \skill{210}{500}{Acrobatics}{Dex}{\chardexmodcount}{0}{0}
-  \skill{210}{490}{Appraise}{Int}{\charintmodcount}{0}{0}
-  \skill{210}{480}{Bluff}{Cha}{\charchamodcount}{0}{0}
-  \skill{210}{470}{Climb}{Str}{\charstrmodcount}{0}{0}
-  \skill{210}{460}{Craft (optional)}{Int}{\charintmodcount}{0}{0}
-  \skill{210}{450}{Craft (optional)}{Int}{\charintmodcount}{0}{0}
-  \skill{210}{440}{Craft (optional)}{Int}{\charintmodcount}{0}{0}
-  \skill{210}{430}{Diplomacy }{Cha}{\charchamodcount}{0}{0}
-  \trainskill{210}{420}{Disable Device}{Dex}{\chardexmodcount}{0}{0}
-  \skill{210}{410}{Disguise}{Cha}{\charchamodcount}{0}{0}
-  \skill{210}{400}{Escape Artist}{Dex}{\chardexmodcount}{0}{0}
-  \skill{210}{390}{Fly}{Dex}{\chardexmodcount}{0}{0}
-  \trainskill{210}{380}{Handle Animal}{Cha}{\charwismodcount}{0}{0}
-  \skill{210}{370}{Heal}{Wis}{\charwismodcount}{0}{0}
-  \skill{210}{360}{Intimidate}{Cha}{\charchamodcount}{0}{0}
-  \trainskill{210}{350}{Knowledge (arcana)}{Int}{\charintmodcount}{0}{0}
-  \trainskill{210}{340}{Knowledge (dungeoneering)}{Int}{\charintmodcount}{0}{0}
-  \trainskill{210}{330}{Knowledge (engineering)}{Int}{\charintmodcount}{0}{0}
-  \trainskill{210}{320}{Knowledge (geography)}{Int}{\charintmodcount}{0}{0}
-  \trainskill{210}{310}{Knowledge (history)}{Int}{\charintmodcount}{0}{0}
-  \trainskill{210}{300}{Knowledge (local)}{Int}{\charintmodcount}{0}{0}
-  \trainskill{210}{290}{Knowledge (nature)}{Int}{\charintmodcount}{0}{0}
-  \trainskill{210}{280}{Knowledge (nobility)}{Int}{\charintmodcount}{0}{0}
-  \trainskill{210}{270}{Knowledge (planes)}{Int}{\charintmodcount}{0}{0}
-  \trainskill{210}{260}{Knowledge (religion)}{Int}{\charintmodcount}{0}{0}
-  \trainskill{210}{250}{Linguistics}{Int}{\charintmodcount}{0}{0}
-  \skill{210}{240}{Perception}{Wis}{\charwismodcount}{0}{0}
-  \skill{210}{230}{Perform (optional)}{Cha}{\charchamodcount}{0}{0}
-  \skill{210}{220}{Perform (optional)}{Cha}{\charchamodcount}{0}{0}
-  \trainskill{210}{210}{Profession (optional)}{Wis}{\charwismodcount}{0}{0}
-  \trainskill{210}{200}{Profession (optional)}{Wis}{\charwismodcount}{0}{0}
-  \skill{210}{190}{Ride}{Dex}{\chardexmodcount}{0}{0}
-  \skill{210}{180}{Sense Motive}{Wis}{\charwismodcount}{0}{0}
-  \trainskill{210}{170}{Sleight of Hand}{Dex}{\chardexmodcount}{0}{0}
-  \trainskill{210}{160}{Spellcraft}{Int}{\charintmodcount}{0}{0}
-  \skill{210}{150}{Stealth}{Dex}{\chardexmodcount}{0}{0}
-  \skill{210}{140}{Survival}{Wis}{\charwismodcount}{0}{0}
-  \skill{210}{130}{Swim}{Str}{\charstrmodcount}{0}{0}
-  \trainskill{210}{120}{Use Magic Device}{Cha}{\charchamodcount}{0}{0}
+  \skill{210}{500}{Acrobatics}{Dex}{chardexmodcount}{0}{0}
+  \skill{210}{490}{Appraise}{Int}{charintmodcount}{0}{0}
+  \skill{210}{480}{Bluff}{Cha}{charchamodcount}{0}{0}
+  \skill{210}{470}{Climb}{Str}{charstrmodcount}{0}{0}
+  \skill{210}{460}{Craft (optional)}{Int}{charintmodcount}{0}{0}
+  \skill{210}{450}{Craft (optional)}{Int}{charintmodcount}{0}{0}
+  \skill{210}{440}{Craft (optional)}{Int}{charintmodcount}{0}{0}
+  \skill{210}{430}{Diplomacy }{Cha}{charchamodcount}{0}{0}
+  \trainskill{210}{420}{Disable Device}{Dex}{chardexmodcount}{0}{0}
+  \skill{210}{410}{Disguise}{Cha}{charchamodcount}{0}{0}
+  \skill{210}{400}{Escape Artist}{Dex}{chardexmodcount}{0}{0}
+  \skill{210}{390}{Fly}{Dex}{chardexmodcount}{0}{0}
+  \trainskill{210}{380}{Handle Animal}{Cha}{charwismodcount}{0}{0}
+  \skill{210}{370}{Heal}{Wis}{charwismodcount}{0}{0}
+  \skill{210}{360}{Intimidate}{Cha}{charchamodcount}{0}{0}
+  \trainskill{210}{350}{Knowledge (arcana)}{Int}{charintmodcount}{0}{0}
+  \trainskill{210}{340}{Knowledge (dungeoneering)}{Int}{charintmodcount}{0}{0}
+  \trainskill{210}{330}{Knowledge (engineering)}{Int}{charintmodcount}{0}{0}
+  \trainskill{210}{320}{Knowledge (geography)}{Int}{charintmodcount}{0}{0}
+  \trainskill{210}{310}{Knowledge (history)}{Int}{charintmodcount}{0}{0}
+  \trainskill{210}{300}{Knowledge (local)}{Int}{charintmodcount}{0}{0}
+  \trainskill{210}{290}{Knowledge (nature)}{Int}{charintmodcount}{0}{0}
+  \trainskill{210}{280}{Knowledge (nobility)}{Int}{charintmodcount}{0}{0}
+  \trainskill{210}{270}{Knowledge (planes)}{Int}{charintmodcount}{0}{0}
+  \trainskill{210}{260}{Knowledge (religion)}{Int}{charintmodcount}{0}{0}
+  \trainskill{210}{250}{Linguistics}{Int}{charintmodcount}{0}{0}
+  \skill{210}{240}{Perception}{Wis}{charwismodcount}{0}{0}
+  \skill{210}{230}{Perform (optional)}{Cha}{charchamodcount}{0}{0}
+  \skill{210}{220}{Perform (optional)}{Cha}{charchamodcount}{0}{0}
+  \trainskill{210}{210}{Profession (optional)}{Wis}{charwismodcount}{0}{0}
+  \trainskill{210}{200}{Profession (optional)}{Wis}{charwismodcount}{0}{0}
+  \skill{210}{190}{Ride}{Dex}{chardexmodcount}{0}{0}
+  \skill{210}{180}{Sense Motive}{Wis}{charwismodcount}{0}{0}
+  \trainskill{210}{170}{Sleight of Hand}{Dex}{chardexmodcount}{0}{0}
+  \trainskill{210}{160}{Spellcraft}{Int}{charintmodcount}{0}{0}
+  \skill{210}{150}{Stealth}{Dex}{chardexmodcount}{0}{0}
+  \skill{210}{140}{Survival}{Wis}{charwismodcount}{0}{0}
+  \skill{210}{130}{Swim}{Str}{charstrmodcount}{0}{0}
+  \trainskill{210}{120}{Use Magic Device}{Cha}{charchamodcount}{0}{0}
   \put(214.5,110){\parbox[b][10\unitlength][c]{100\unitlength}{ \tiny\scshape $\footnotesize\cancel\square$  Class Skill\hspace{2ex} * trained only}}
 
   \put(215,100){\parbox[b][10\unitlength][c]{200\unitlength}{\small\scshape Conditional Modifiers:}}

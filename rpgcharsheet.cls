@@ -15,7 +15,8 @@
 \RequirePackage{cancel}
 \RequirePackage{xcolor}
 \RequirePackage{color}
-
+\RequirePackage{calc}
+\RequirePackage{ifthen}
 \ProcessOptions\relax
 \DeclareOption* {\PassOptionsToClass{\CurrentOption}{memoir}}
 
@@ -140,55 +141,168 @@
   \advance\xcount by #4
 }
 
-\def\charstr#1{
-  \global\newcount\charstrcount
-  \charstrcount#1
-  \global\newcount\charstrmodcount
-  \charstrmodcount#1
-  \advance\charstrmodcount by -10
-  \divide \charstrmodcount by 2
+\newcounter{charstrcount}
+\newcounter{chardexcount}
+\newcounter{charconcount}
+\newcounter{charintcount}
+\newcounter{charwiscount}
+\newcounter{charchacount}
+\newcounter{charstrmodcount}
+\newcounter{chardexmodcount}
+\newcounter{charconmodcount}
+\newcounter{charintmodcount}
+\newcounter{charwismodcount}
+\newcounter{charchamodcount}
+\newcounter{charstrtmpadjcount}
+\newcounter{chardextmpadjcount}
+\newcounter{charcontmpadjcount}
+\newcounter{charinttmpadjcount}
+\newcounter{charwistmpadjcount}
+\newcounter{charchatmpadjcount}
+\newcounter{charstrtmpmodcount}
+\newcounter{chardextmpmodcount}
+\newcounter{charcontmpmodcount}
+\newcounter{charinttmpmodcount}
+\newcounter{charwistmpmodcount}
+\newcounter{charchatmpmodcount}
+
+\newcommand\charstr[1]{
+  \setcounter{charstrcount}{0}
+  \setcounter{charstrcount}{#1}
+  \setcounter{charstrmodcount}{0}
+  \setcounter{charstrmodcount}{(\value{charstrcount}-10)/\real{2}}
 }
-\def\chardex#1{
-  \global\newcount\chardexcount
-  \chardexcount#1
-  \global\newcount\chardexmodcount
-  \chardexmodcount#1
-  \advance\chardexmodcount by -10
-  \divide \chardexmodcount by 2
+\newcommand\chardex[1]{
+  \setcounter{chardexcount}{0}
+  \setcounter{chardexcount}{#1}
+  \setcounter{chardexmodcount}{0}
+  \setcounter{chardexmodcount}{(\value{chardexcount}-10)/\real{2}}
 }
-\def\charcon#1{
-  \global\newcount\charconcount
-  \charconcount#1
-  \global\newcount\charconmodcount
-  \charconmodcount#1
-  \advance\charconmodcount by -10
-  \divide \charconmodcount by 2
+\newcommand\charcon[1]{
+  \setcounter{charconcount}{0}
+  \setcounter{charconcount}{#1}
+  \setcounter{charconmodcount}{0}
+  \setcounter{charconmodcount}{(\value{charconcount}-10)/\real{2}}
 }
-\def\charint#1{
-  \global\newcount\charintcount
-  \charintcount#1
-  \global\newcount\charintmodcount
-  \charintmodcount#1
-  \advance\charintmodcount by -10
-  \divide \charintmodcount by 2
+\newcommand\charint[1]{
+  \setcounter{charintcount}{0}
+  \setcounter{charintcount}{#1}
+  \setcounter{charintmodcount}{0}
+  \setcounter{charintmodcount}{(\value{charintcount}-10)/\real{2}}
 }
-\def\charwis#1{
-  \global\newcount\charwiscount
-  \charwiscount#1
-  \global\newcount\charwismodcount
-  \charwismodcount#1
-  \advance\charwismodcount by -10
-  \divide \charwismodcount by 2
+\newcommand\charwis[1]{
+  \setcounter{charwiscount}{0}
+  \setcounter{charwiscount}{#1}
+  \setcounter{charwismodcount}{0}
+  \setcounter{charwismodcount}{(\value{charwiscount}-10)/\real{2}}
 }
-\def\charcha#1{
-  \global\newcount\charchacount
-  \charchacount#1
-  \global\newcount\charchamodcount
-  \charchamodcount#1
-  \advance\charchamodcount by -10
-  \divide \charchamodcount by 2
+\newcommand\charcha[1]{
+  \setcounter{charchacount}{0}
+  \setcounter{charchacount}{#1}
+  \setcounter{charchamodcount}{0}
+  \setcounter{charchamodcount}{(\value{charchacount}-10)/\real{2}}
+}
+% \def\charstr#1{
+%   \charstrcount#1
+%   \global\newcount\charstrmodcount
+%   \charstrmodcount#1
+%   \advance\charstrmodcount by -10
+%   \divide \charstrmodcount by 2
+% }
+% \def\chardex#1{
+%   \global\newcount\chardexcount
+%   \chardexcount#1
+%   \global\newcount\chardexmodcount
+%   \chardexmodcount#1
+%   \advance\chardexmodcount by -10
+%   \divide \chardexmodcount by 2
+% }
+% \def\charcon#1{
+%   \global\newcount\charconcount
+%   \charconcount#1
+%   \global\newcount\charconmodcount
+%   \charconmodcount#1
+%   \advance\charconmodcount by -10
+%   \divide \charconmodcount by 2
+% }
+% \def\charint#1{
+%   \global\newcount\charintcount
+%   \charintcount#1
+%   \global\newcount\charintmodcount
+%   \charintmodcount#1
+%   \advance\charintmodcount by -10
+%   \divide \charintmodcount by 2
+% }
+% \def\charwis#1{
+%   \global\newcount\charwiscount
+%   \charwiscount#1
+%   \global\newcount\charwismodcount
+%   \charwismodcount#1
+%   \advance\charwismodcount by -10
+%   \divide \charwismodcount by 2
+% }
+% \def\charcha#1{
+%   \global\newcount\charchacount
+%   \charchacount#1
+%   \global\newcount\charchamodcount
+%   \charchamodcount#1
+%   \advance\charchamodcount by -10
+%   \divide \charchamodcount by 2
+% }
+
+\def\charstrtempadj#1{
+  \global\newcount\charstrtempadjcount
+  \charstrtempadjcount#1
+}
+\def\chardextempadj#1{
+  \global\newcount\chardextempadjcount
+  \chardextempadjcount#1
+}
+\def\charcontempadj#1{
+  \global\newcount\charcontempadjcount
+  \charcontempadjcount#1
+}
+\def\charinttempadj#1{
+  \global\newcount\charinttempadjcount
+  \charinttempadjcount#1
+}
+\def\charwistempadj#1{
+  \global\newcount\charwistempadjcount
+  \charwistempadjcount#1
+}
+\def\charchatempadj#1{
+  \global\newcount\charchatempadjcount
+  \charchatempadjcount#1
 }
 
+\def\charstrtempmod#1{
+  \global\newcount\charstrtempmodcount
+  \charstrtempmodcount#1
+}
+\def\chardextempmod#1{
+  \global\newcount\chardextempmodcount
+  \chardextempmodcount#1
+}
+\def\charcontempmod#1{
+  \global\newcount\charcontempmodcount
+  \charcontempmodcount#1
+}
+\def\charinttempmod#1{
+  \global\newcount\charinttempmodcount
+  \charinttempmodcount#1
+}
+\def\charwistempmod#1{
+  \global\newcount\charwistempmodcount
+  \charwistempmodcount#1
+}
+\def\charchatempmod#1{
+  \global\newcount\charchatempmodcount
+  \charchatempmodcount#1
+}
+
+\newcommand\plusminus[1]{
+  \ifthenelse{\value{#1}>0}{$+\arabic{#1}$}{$\arabic{#1}$}
+}
 \def\abilitymodifier#1{
   \newcount\tmpcount
   \tmpcount#1
@@ -452,31 +566,31 @@
     \end{tabular}}
 }
 
+\newcounter{tmpskilltotalcount}
+\setcounter{tmpskilltotalcount}{0}
+
+\newcommand\skillcalculate[4]{
+  \setcounter{tmpskilltotalcount}{\value{#2}+#3+#4}
+  \plusminus{tmpskilltotalcount} & $=$ #1 & $\arabic{#2}$ & $+$ & $#3$ &  $+$ & $#4$ \tabularnewline\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}
+}
+ 
 \newcommand\skill[7]{
-  \newcount\tmpcount\tmpcount=0
-  \advance\tmpcount\number#5
-  \advance\tmpcount#6
-  \advance\tmpcount#7
   \put(#1,#2){
   \begin{tabular}[b]{A{10}B{100}A{14}B{20}A{14}A{8}A{14}A{8}A{14}}
-    $\square$ &  #3 & \ifnum\number\tmpcount<0 $\number\tmpcount$ \else $+\number\tmpcount$ \fi & $=$ #4 & $\number#5$ & $+$ & $#6$ &  $+$ & $#7$ \tabularnewline\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}
+    $\square$ &  #3 & \skillcalculate{#4}{#5}{#6}{#7}
   \end{tabular}}
 }
 \newcommand\classskill[7]{
-  \newcount\tmpcount\tmpcount=0
-  \advance\tmpcount\number#5
-  \advance\tmpcount#6
-  \advance\tmpcount#7
   \put(#1,#2){
   \begin{tabular}[b]{A{10}B{100}A{14}B{20}A{14}A{8}A{14}A{8}A{14}}
-    $\cancel\square$ &  #3 & \ifnum\number\tmpcount<0 $\number\tmpcount$ \else $+\number\tmpcount$ \fi & $=$ #4 & $\number#5$ & $+$ & $#6$ &  $+$ & $#7$ \tabularnewline\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}
+    $\cancel\square$ &  #3 & \skillcalculate{#4}{#5}{#6}{#7}
   \end{tabular}}
 }
 
 \newcommand\trainskill[7]{
   \put(#1,#2){
   \begin{tabular}[b]{A{10}B{100}A{14}B{20}A{14}A{8}A{14}A{8}A{14}}
-    $\square$ &  #3* & $+0$ & $=$ #4 & $\number#5$ & $+$ & $#6$ &  $+$ & $#7$ \tabularnewline\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}
+    $\square$ &  #3* & \skillcalculate{#4}{#5}{#6}{#7}
   \end{tabular}}
 }
 
