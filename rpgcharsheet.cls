@@ -140,53 +140,53 @@
   \advance\xcount by #4
 }
 
-\def\strength#1{
-  \global\newcount\strengthcount
-  \strengthcount#1
-  \global\newcount\strengthmodcount
-  \strengthmodcount#1
-  \advance\strengthmodcount by -10
-  \divide \strengthmodcount by 2
+\def\charstr#1{
+  \global\newcount\charstrcount
+  \charstrcount#1
+  \global\newcount\charstrmodcount
+  \charstrmodcount#1
+  \advance\charstrmodcount by -10
+  \divide \charstrmodcount by 2
 }
-\def\dexterity#1{
-  \global\newcount\dexteritycount
-  \dexteritycount#1
-  \global\newcount\dexteritymodcount
-  \dexteritymodcount#1
-  \advance\dexteritymodcount by -10
-  \divide \dexteritymodcount by 2
+\def\chardex#1{
+  \global\newcount\chardexcount
+  \chardexcount#1
+  \global\newcount\chardexmodcount
+  \chardexmodcount#1
+  \advance\chardexmodcount by -10
+  \divide \chardexmodcount by 2
 }
-\def\constitution#1{
-  \global\newcount\constitutioncount
-  \constitutioncount#1
-  \global\newcount\constitutionmodcount
-  \constitutionmodcount#1
-  \advance\constitutionmodcount by -10
-  \divide \constitutionmodcount by 2
+\def\charcon#1{
+  \global\newcount\charconcount
+  \charconcount#1
+  \global\newcount\charconmodcount
+  \charconmodcount#1
+  \advance\charconmodcount by -10
+  \divide \charconmodcount by 2
 }
-\def\intelligence#1{
-  \global\newcount\intelligencecount
-  \intelligencecount#1
-  \global\newcount\intelligencemodcount
-  \intelligencemodcount#1
-  \advance\intelligencemodcount by -10
-  \divide \intelligencemodcount by 2
+\def\charint#1{
+  \global\newcount\charintcount
+  \charintcount#1
+  \global\newcount\charintmodcount
+  \charintmodcount#1
+  \advance\charintmodcount by -10
+  \divide \charintmodcount by 2
 }
-\def\wisdom#1{
-  \global\newcount\wisdomcount
-  \wisdomcount#1
-  \global\newcount\wisdommodcount
-  \wisdommodcount#1
-  \advance\wisdommodcount by -10
-  \divide \wisdommodcount by 2
+\def\charwis#1{
+  \global\newcount\charwiscount
+  \charwiscount#1
+  \global\newcount\charwismodcount
+  \charwismodcount#1
+  \advance\charwismodcount by -10
+  \divide \charwismodcount by 2
 }
-\def\charisma#1{
-  \global\newcount\charismacount
-  \charismacount#1
-  \global\newcount\charismamodcount
-  \charismamodcount#1
-  \advance\charismamodcount by -10
-  \divide \charismamodcount by 2
+\def\charcha#1{
+  \global\newcount\charchacount
+  \charchacount#1
+  \global\newcount\charchamodcount
+  \charchamodcount#1
+  \advance\charchamodcount by -10
+  \divide \charchamodcount by 2
 }
 
 \def\abilitymodifier#1{
