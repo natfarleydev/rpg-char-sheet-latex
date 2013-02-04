@@ -1,0 +1,71 @@
+\documentclass[oneside]{article}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\begin{document}
+\title{\texttt{rpgcharsheet} manual}
+\author{Nathanael Farley}
+\maketitle
+
+\section{Introduction}
+\label{sec:introduction}
+
+This class is designed to create dynamic RPG character sheets. Currently, a Pathfinder template is enclosed. This template will be used in all examples, with extensions discussed at the end.
+
+\section{Using a template}
+\label{sec:using-template}
+
+All variables can be changed with \verb=\renewcommand= and \verb=\setcounter=, however some commands are provided to make things simpler.
+
+\subsection{Naming convention}
+\label{sec:naming-convention}
+
+In general, all character variables are prefaced with \verb=char= as in \verb=charstr=, \verb=chardex=. Abilities are abreviated as in table \ref{tab:abbrev}. All others are given full names, without spaces or punctuation (e.g.\ a variable about `Knowledge (Arcana)' would be \verb=charknowledgearcana=). All numbers have the word \verb=count= put after them, demonstrated later.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c c }
+    Name & Abbreviation\\\hline
+    Strength & \verb=str=\\
+    Dexterity & \verb=dex=\\
+    Constitution & \verb=con=\\
+    Intelligence & \verb=int=\\
+    Wisdom & \verb=wis=\\
+    Charisma & \verb=cha=\\\hline
+  \end{tabular}
+  \caption{Abbreviation for abilities}
+  \label{tab:abbrev}
+\end{table}
+
+When a feature of an ability/skill is used, such as temprary modifiers, the user simply adds these onto the end of the ability/skill name (e.g.\ `Knowledge (Arcana) Miscellaneous Modifier' would become \verb=\charknowledgearcanamiscmodcount=. ). These variables are also abbreviated (detailed in table \ref{tab:otherabbrev})
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c c }
+    Feature & Abbreviation \\\hline
+    Temporary/Temp & \verb=tmp=\\
+    Modifier & \verb=mod=\\
+    Adjustmuent & \verb=adj=\\\hline
+  \end{tabular}
+  \caption{Other abreviations}
+  \label{tab:otherabbrev}
+\end{table}
+
+To change a number, one uses \verb=\setcounter= in the usual way. A counter name is made of 4 parts:
+\protect\parbox{\linewidth}{\texttt{char}$\langle$\emph{attribute/skill name}$\rangle\langle$\emph{type of modifier}$\rangle$\texttt{count}}
+where the attribute/skill name and type of modifier are as above. An example of this is:
+\[
+\mathtt{\backslash setcounter\{\underbrace{\mathtt{char}}_{\mathclap{\mathrm{\emph{char}acter}}}\overbrace{\mathtt{intimidate}}^{\mathclap{\mathrm{\emph{Intimidate}\ Skill}}}\underbrace{\mathtt{miscmod}}_{\mathclap{\mathrm{\emph{Misc}ellaneous\ \emph{Mod}ifier}}}\overbrace{\mathtt{count}}^{\mathclap{\mathrm{\emph{Count}er}}}\}\{5\}}
+\]
+which would be used to set the character's intimidate skill miscellaneous modifier to $+5$. Totals are automatically calculated wherever a an equals sign is seen.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+TODO this conclusion!
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
