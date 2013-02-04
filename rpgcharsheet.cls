@@ -202,127 +202,155 @@
   \setcounter{charchamodcount}{0}
   \setcounter{charchamodcount}{(\value{charchacount}-10)/\real{2}}
 }
-% \def\charstr#1{
-%   \charstrcount#1
-%   \global\newcount\charstrmodcount
-%   \charstrmodcount#1
-%   \advance\charstrmodcount by -10
-%   \divide \charstrmodcount by 2
-% }
-% \def\chardex#1{
-%   \global\newcount\chardexcount
-%   \chardexcount#1
-%   \global\newcount\chardexmodcount
-%   \chardexmodcount#1
-%   \advance\chardexmodcount by -10
-%   \divide \chardexmodcount by 2
-% }
-% \def\charcon#1{
-%   \global\newcount\charconcount
-%   \charconcount#1
-%   \global\newcount\charconmodcount
-%   \charconmodcount#1
-%   \advance\charconmodcount by -10
-%   \divide \charconmodcount by 2
-% }
-% \def\charint#1{
-%   \global\newcount\charintcount
-%   \charintcount#1
-%   \global\newcount\charintmodcount
-%   \charintmodcount#1
-%   \advance\charintmodcount by -10
-%   \divide \charintmodcount by 2
-% }
-% \def\charwis#1{
-%   \global\newcount\charwiscount
-%   \charwiscount#1
-%   \global\newcount\charwismodcount
-%   \charwismodcount#1
-%   \advance\charwismodcount by -10
-%   \divide \charwismodcount by 2
-% }
-% \def\charcha#1{
-%   \global\newcount\charchacount
-%   \charchacount#1
-%   \global\newcount\charchamodcount
-%   \charchamodcount#1
-%   \advance\charchamodcount by -10
-%   \divide \charchamodcount by 2
-% }
-
-\def\charstrtempadj#1{
-  \global\newcount\charstrtempadjcount
-  \charstrtempadjcount#1
-}
-\def\chardextempadj#1{
-  \global\newcount\chardextempadjcount
-  \chardextempadjcount#1
-}
-\def\charcontempadj#1{
-  \global\newcount\charcontempadjcount
-  \charcontempadjcount#1
-}
-\def\charinttempadj#1{
-  \global\newcount\charinttempadjcount
-  \charinttempadjcount#1
-}
-\def\charwistempadj#1{
-  \global\newcount\charwistempadjcount
-  \charwistempadjcount#1
-}
-\def\charchatempadj#1{
-  \global\newcount\charchatempadjcount
-  \charchatempadjcount#1
-}
-
-\def\charstrtempmod#1{
-  \global\newcount\charstrtempmodcount
-  \charstrtempmodcount#1
-}
-\def\chardextempmod#1{
-  \global\newcount\chardextempmodcount
-  \chardextempmodcount#1
-}
-\def\charcontempmod#1{
-  \global\newcount\charcontempmodcount
-  \charcontempmodcount#1
-}
-\def\charinttempmod#1{
-  \global\newcount\charinttempmodcount
-  \charinttempmodcount#1
-}
-\def\charwistempmod#1{
-  \global\newcount\charwistempmodcount
-  \charwistempmodcount#1
-}
-\def\charchatempmod#1{
-  \global\newcount\charchatempmodcount
-  \charchatempmodcount#1
-}
 
 \newcommand\plusminus[1]{
   \ifthenelse{\value{#1}>0}{$+\arabic{#1}$}{$\arabic{#1}$}
 }
-\def\abilitymodifier#1{
-  \newcount\tmpcount
-  \tmpcount#1
-  \advance\tmpcount by -10
-  \divide \tmpcount by 2
- \hspace{-5\unitlength}
-  \ifnum\number\tmpcount<0
-  $\the\tmpcount$
-  \else
-  $+\the\tmpcount$
-  \fi
-}
 
-\def\numberabilitymodifier#1{
-  \newcount\tmpcount
-  \tmpcount#1
-  \advance\tmpcount by -10
-  \divide \tmpcount by 2
-  \number\tmpcount
-}
+%% Skill set counters
+\newcounter{characrobaticscount}
+\newcounter{charappraisecount}
+\newcounter{charbluffcount}
+\newcounter{charclimbcount}
+\newcounter{charcraftonecount}
+\newcounter{charcrafttwocount}
+\newcounter{charcraftthreecount}
+\newcounter{chardiplomacycount}
+\newcounter{chardisabledevicecount}
+\newcounter{chardisguisecount}
+\newcounter{charescapeartistcount}
+\newcounter{charflycount}
+\newcounter{charhandleanimalcount}
+\newcounter{charhealcount}
+\newcounter{charintimidatecount}
+\newcounter{charknowledgearcanacount}
+\newcounter{charknowledgedungeoneeringcount}
+\newcounter{charknowledgeengineeringcount}
+\newcounter{charknowledgegeographycount}
+\newcounter{charknowledgehistorycount}
+\newcounter{charknowledgelocalcount}
+\newcounter{charknowledgenaturecount}
+\newcounter{charknowledgenobilitycount}
+\newcounter{charknowledgeplanescount}
+\newcounter{charknowledgereligioncount}
+\newcounter{charlinguisticscount}
+\newcounter{charperceptioncount}
+\newcounter{charperformonecount}
+\newcounter{charperformtwocount}
+\newcounter{charprofessiononecount}
+\newcounter{charprofessiontwocount}
+\newcounter{charridecount}
+\newcounter{charsensemotivecount}
+\newcounter{charsleightofhandcount}
+\newcounter{charspellcraftcount}
+\newcounter{charstealthcount}
+\newcounter{charsurvivalcount}
+\newcounter{charswimcount}
+\newcounter{charusemagicdevicecount}
+
+%% Skill ranks
+\newcounter{characrobaticsrankscount}
+\newcounter{charappraiserankscount}
+\newcounter{charbluffrankscount}
+\newcounter{charclimbrankscount}
+\newcounter{charcraftonerankscount}
+\newcounter{charcrafttworankscount}
+\newcounter{charcraftthreerankscount}
+\newcounter{chardiplomacyrankscount}
+\newcounter{chardisabledevicerankscount}
+\newcounter{chardisguiserankscount}
+\newcounter{charescapeartistrankscount}
+\newcounter{charflyrankscount}
+\newcounter{charhandleanimalrankscount}
+\newcounter{charhealrankscount}
+\newcounter{charintimidaterankscount}
+\newcounter{charknowledgearcanarankscount}
+\newcounter{charknowledgedungeoneeringrankscount}
+\newcounter{charknowledgeengineeringrankscount}
+\newcounter{charknowledgegeographyrankscount}
+\newcounter{charknowledgehistoryrankscount}
+\newcounter{charknowledgelocalrankscount}
+\newcounter{charknowledgenaturerankscount}
+\newcounter{charknowledgenobilityrankscount}
+\newcounter{charknowledgeplanesrankscount}
+\newcounter{charknowledgereligionrankscount}
+\newcounter{charlinguisticsrankscount}
+\newcounter{charperceptionrankscount}
+\newcounter{charperformonerankscount}
+\newcounter{charperformtworankscount}
+\newcounter{charprofessiononerankscount}
+\newcounter{charprofessiontworankscount}
+\newcounter{charriderankscount}
+\newcounter{charsensemotiverankscount}
+\newcounter{charsleightofhandrankscount}
+\newcounter{charspellcraftrankscount}
+\newcounter{charstealthrankscount}
+\newcounter{charsurvivalrankscount}
+\newcounter{charswimrankscount}
+\newcounter{charusemagicdevicerankscount}
+
+%% Skill misc mod
+\newcounter{characrobaticsmiscmodcount}
+\newcounter{charappraisemiscmodcount}
+\newcounter{charbluffmiscmodcount}
+\newcounter{charclimbmiscmodcount}
+\newcounter{charcraftonemiscmodcount}
+\newcounter{charcrafttwomiscmodcount}
+\newcounter{charcraftthreemiscmodcount}
+\newcounter{chardiplomacymiscmodcount}
+\newcounter{chardisabledevicemiscmodcount}
+\newcounter{chardisguisemiscmodcount}
+\newcounter{charescapeartistmiscmodcount}
+\newcounter{charflymiscmodcount}
+\newcounter{charhandleanimalmiscmodcount}
+\newcounter{charhealmiscmodcount}
+\newcounter{charintimidatemiscmodcount}
+\newcounter{charknowledgearcanamiscmodcount}
+\newcounter{charknowledgedungeoneeringmiscmodcount}
+\newcounter{charknowledgeengineeringmiscmodcount}
+\newcounter{charknowledgegeographymiscmodcount}
+\newcounter{charknowledgehistorymiscmodcount}
+\newcounter{charknowledgelocalmiscmodcount}
+\newcounter{charknowledgenaturemiscmodcount}
+\newcounter{charknowledgenobilitymiscmodcount}
+\newcounter{charknowledgeplanesmiscmodcount}
+\newcounter{charknowledgereligionmiscmodcount}
+\newcounter{charlinguisticsmiscmodcount}
+\newcounter{charperceptionmiscmodcount}
+\newcounter{charperformonemiscmodcount}
+\newcounter{charperformtwomiscmodcount}
+\newcounter{charprofessiononemiscmodcount}
+\newcounter{charprofessiontwomiscmodcount}
+\newcounter{charridemiscmodcount}
+\newcounter{charsensemotivemiscmodcount}
+\newcounter{charsleightofhandmiscmodcount}
+\newcounter{charspellcraftmiscmodcount}
+\newcounter{charstealthmiscmodcount}
+\newcounter{charsurvivalmiscmodcount}
+\newcounter{charswimmiscmodcount}
+\newcounter{charusemagicdevicemiscmodcount}
+
+
+% \def\abilitymodifier#1{
+%   \newcount\tmpcount
+%   \tmpcount#1
+%   \advance\tmpcount by -10
+%   \divide \tmpcount by 2
+%  \hspace{-5\unitlength}
+%   \ifnum\number\tmpcount<0
+%   $\the\tmpcount$
+%   \else
+%   $+\the\tmpcount$
+%   \fi
+% }
+
+% \def\numberabilitymodifier#1{
+%   \newcount\tmpcount
+%   \tmpcount#1
+%   \advance\tmpcount by -10
+%   \divide \tmpcount by 2
+%   \number\tmpcount
+% }
 
 
 
@@ -570,8 +598,8 @@
 \setcounter{tmpskilltotalcount}{0}
 
 \newcommand\skillcalculate[4]{
-  \setcounter{tmpskilltotalcount}{\value{#2}+#3+#4}
-  \plusminus{tmpskilltotalcount} & $=$ #1 & $\arabic{#2}$ & $+$ & $#3$ &  $+$ & $#4$ \tabularnewline\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}
+  \setcounter{tmpskilltotalcount}{\value{#2}+\value{#3}+\value{#4}}
+  \plusminus{tmpskilltotalcount} & $=$ #1 & $\arabic{#2}$ & $+$ & $\arabic{#3}$ &  $+$ & $\arabic{#4}$ \tabularnewline\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}
 }
  
 \newcommand\skill[7]{
