@@ -207,6 +207,10 @@
   \ifthenelse{\value{#1}>0}{$+\arabic{#1}$}{$\arabic{#1}$}
 }
 
+
+%% Health counter
+\newcounter{charhpcount}
+
 %% Skill set counters
 \newcounter{characrobaticscount}
 \newcounter{charappraisecount}
@@ -675,7 +679,7 @@
 \newcommand\lfont{\fontsize{4}{4}\selectfont\scshape}
 \newcommand\charname{Tralguth}
 \newcommand\charlevel{Level 1 Witch}
-\newcommand\charplayer{Nathanael}
+\newcommand\charplayername{Nathanael}
 \newcommand\charalignment{TN}
 \newcommand\chardiety{None}
 \newcommand\charrace{Half-orc}
