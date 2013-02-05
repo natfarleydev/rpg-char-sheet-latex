@@ -1,7 +1,7 @@
 \documentclass{rpgcharsheet}
 
 \begin{document}
-
+\input{player.tex}
 \unitlength\textwidth
 \divide\unitlength 420
 
@@ -91,11 +91,11 @@
 
   %% fort, reflex and will
   \stretchlabels{60}{392}{205}{TOTAL, base save, ability modifier, magic modifier, misc modifier, temporary modifier}
-  \titlebox{0}{380}{53}{fortitude}{(Charcon)}
+  \titlebox{0}{380}{53}{fortitude}{(constitution)}
   \stretchequalattributes{60}{380}{205}{0,\arabic{charconmodcount},0,0,0}
-  \titlebox{0}{365}{53}{reflex}{(chardex)}
+  \titlebox{0}{365}{53}{reflex}{(dexterity)}
   \stretchequalattributes{60}{365}{205}{0,\arabic{chardexmodcount},0,0,0}
-  \titlebox{0}{350}{53}{will}{(charwis)}  
+  \titlebox{0}{350}{53}{will}{(wisdom)}  
   \stretchequalattributes{60}{350}{205}{0,\arabic{charwismodcount},0,0,0}
 
   %%Base attack bonus, spell resistance
