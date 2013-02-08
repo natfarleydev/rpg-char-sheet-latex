@@ -51,9 +51,10 @@
 
 
   %% HP
-  \put(107,505){\framebox(26,12){}}
-  \put(107,508){\makebox(26,9){HP}}
-  \put(107,506){\makebox(26,3){\tiny\scshape hit points}}
+  \singletitlebox{107}{505}{26}{12}{HP}
+  % \put(107,505){\framebox(26,12){}}
+  % \put(107,508){\makebox(26,9){HP}}
+  % \put(107,506){\makebox(26,3){\tiny\scshape hit points}}
   \put(137,505){\framebox(38,12){}}
   \put(137,512){\makebox(14,4){\tiny\scshape Total}}
   \put(137,505){\parbox[b][12\unitlength][c]{36\unitlength}{\raggedleft \arabic{charhpcount}}}
@@ -99,20 +100,21 @@
   \stretchequalattributes{60}{350}{205}{0,\arabic{charwismodcount},0,0,0}
 
   %%Base attack bonus, spell resistance
-  \put(0,329){\framebox(90,11){BASE ATTACK BONUS}}
+  \singletitlebox{0}{329}{90}{11}{base attack bonus}
   \attributes{94}{330}{0}
-  \put(113,329){\framebox(74,11){SPELL RESISTANCE}}
+  \singletitlebox{113}{329}{74}{11}{spell resistance}
   \attributes{190}{330}{0}
   
 
-  \put(0,309){\framebox(21,11){CMB}}
+  \singletitlebox{0}{309}{21}{11}{cmb}
   \stretchequalattributes{25}{310}{130}{0,\arabic{charstrmodcount},0}
   \stretchlabels{25}{304}{130}{TOTAL, \mbox{base attack} bonus,strength modifier, size modifier}
-  \put(0,289){\framebox(20,11){CMD}}
- \stretchequalattributes{25}{290}{130}{0,\arabic{charstrmodcount},\arabic{chardexmodcount},0,10}
+  \singletitlebox{0}{289}{21}{11}{cmd}
+  \stretchequalattributes{25}{290}{130}{0,\arabic{charstrmodcount},\arabic{chardexmodcount},0,10}
   \stretchlabels{25}{284}{130}{TOTAL, \mbox{base attack} bonus,strength modifier,dexterity modifier, size modifier,default}
 
-  \put(135,284){\framebox(25,35){\uppercase{Speed}}}
+  \singletitlebox{135}{284}{25}{35}{speed}
+  % \put(135,284){\framebox(25,35){\uppercase{Speed}}}
   \put(165,310){\framebox(40,\boxheight){}}
   \put(165,311){\begin{tabular}[b]{F{17}E{2}F{16}E{2}}0 &ft. & 0& sq.\end{tabular}}
   \put(165,307){\parbox[b][3\unitlength][b]{40\unitlength}{\centering\lfont base speed}}

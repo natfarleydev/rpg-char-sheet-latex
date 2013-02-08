@@ -166,6 +166,7 @@
 \newcounter{charwistmpmodcount}
 \newcounter{charchatmpmodcount}
 
+
 \newcommand\charstr[1]{
   \setcounter{charstrcount}{0}
   \setcounter{charstrcount}{#1}
@@ -623,6 +624,18 @@
   \advance\ycount-1
   \put(#1,\ycount){\makebox(#3,\hcount){\color{white}{\tiny\scshape #5}}}
 }
+
+\newcommand\singletitlebox[5]{
+  % \put(#1,#2){\framebox(#3,#4){\uppercase{#5}}}
+  \put(#1,#2){%
+    \setlength\fboxsep{0pt}\colorbox{black!100}{%
+      \makebox(#3,#4){%
+        \color{white}{\centering\uppercase{#5}}%
+      }%
+    }%
+  }%
+}
+
 
 \newcolumntype{A}[1]{@{}>{\centering\footnotesize}m{#1\unitlength}@{}}
 \newcolumntype{B}[1]{@{}>{\footnotesize\scshape}m{#1\unitlength}@{}}
