@@ -636,6 +636,36 @@
   }%
 }
 
+\newcounter{totalitemweight}
+
+\newcommand\printgearitems{\lfont item& \lfont wt.\tabularnewline\hline}
+
+\newcommand\gearitem[2]{
+  \let\oldprintgearitems\printgearitems
+  \addtocounter{totalitemweight}{#2}
+  \renewcommand{\printgearitems}{\oldprintgearitems
+  \textit{#1} & #2~lbs.\tabularnewline\hline}
+}
+
+
+\newcounter{totalacitemsbonus}
+\newcounter{totalacitemscheckpenalty}
+\newcounter{totalacitemsspellfailure}
+\newcounter{totalacitemsweight}
+
+\newcommand\printacitem{ & \lfont bonus & \lfont type & \lfont check penalty & \lfont spell failure & \lfont weight & \lfont properties \tabularnewline\toprule}
+
+\newcommand\acitem[7]{
+  \let\oldprintacitem\printacitem
+  \addtocounter{totalacitemsbonus}{#2}
+  \addtocounter{totalacitemscheckpenalty}{#4}
+  \addtocounter{totalacitemsspellfailure}{#5}
+  \addtocounter{totalacitemsweight}{#6}
+  
+  \renewcommand{\printgearitems}{\oldprintgearitems
+  \textit{#1} & #2~lbs.\tabularnewline\hline}
+
+}
 
 \newcolumntype{A}[1]{@{}>{\centering\footnotesize}m{#1\unitlength}@{}}
 \newcolumntype{B}[1]{@{}>{\footnotesize\scshape}m{#1\unitlength}@{}}
