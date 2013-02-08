@@ -638,7 +638,7 @@
 
 \newcounter{totalitemweight}
 
-\newcommand\printgearitems{\lfont item& \lfont wt.\tabularnewline\hline}
+\newcommand\printgearitems{\multicolumn{2}{c}{Gear} \tabularnewline \lfont item& \lfont wt.\tabularnewline\hline}
 
 \newcommand\gearitem[2]{
   \let\oldprintgearitems\printgearitems
@@ -647,23 +647,24 @@
   \textit{#1} & #2~lbs.\tabularnewline\hline}
 }
 
+\newcommand\charfeats{None}
 
 \newcounter{totalacitemsbonus}
 \newcounter{totalacitemscheckpenalty}
 \newcounter{totalacitemsspellfailure}
 \newcounter{totalacitemsweight}
 
-\newcommand\printacitem{ & \lfont bonus & \lfont type & \lfont check penalty & \lfont spell failure & \lfont weight & \lfont properties \tabularnewline\toprule}
+\newcommand\printacitems{ \uppercase{AC Items} & \lfont bonus & \lfont type & \lfont check penalty & \lfont spell failure & \lfont weight & \lfont properties \tabularnewline\hline}
 
 \newcommand\acitem[7]{
-  \let\oldprintacitem\printacitem
+  \let\oldprintacitems\printacitems
   \addtocounter{totalacitemsbonus}{#2}
   \addtocounter{totalacitemscheckpenalty}{#4}
   \addtocounter{totalacitemsspellfailure}{#5}
   \addtocounter{totalacitemsweight}{#6}
   
-  \renewcommand{\printgearitems}{\oldprintgearitems
-  \textit{#1} & #2~lbs.\tabularnewline\hline}
+  \renewcommand{\printacitems}{\oldprintacitems
+  #1 & #2 & #3 & #4 & #5\% & #6~lbs. & #7\tabularnewline\hline}
 
 }
 
