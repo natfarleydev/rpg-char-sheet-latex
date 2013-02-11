@@ -29,8 +29,13 @@
 \subgearitem{part of thing2}{43}
 \totalitem}
 
-\acitem{Padded}{2}{light}{0}{5}{10}{}
+%% Same problem as gear, this is not an ideal solution
+\renewcommand\printacitems{\uppercase{AC Items} & \lfont bonus & \lfont type & \lfont check penalty & \lfont spell failure & \lfont weight & \lfont properties \tabularnewline\hline
+  \acitem{Padded}{2}{light}{0}{5}{10}{}
+  \acitem{Padded}{2}{light}{0}{5}{10}{}
+}
 
+\renewcommand\charspelldump{This is a very non-ideal solution to the spell problem. This is just a parbox for the user to put whatever they feel best keeps track of their spells. Future versions of this character sheet will include proper spell management}
 
 %%% Local Variables: 
 %%% mode: latex

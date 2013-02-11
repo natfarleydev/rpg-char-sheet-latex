@@ -672,15 +672,14 @@
 \newcommand\printacitems{ \uppercase{AC Items} & \lfont bonus & \lfont type & \lfont check penalty & \lfont spell failure & \lfont weight & \lfont properties \tabularnewline\hline}
 
 \newcommand\acitem[7]{
-  \let\oldprintacitems\printacitems
+  % \let\oldprintacitems\printacitems
   \addtocounter{totalacitemsbonus}{#2}
   \addtocounter{totalacitemscheckpenalty}{#4}
   \addtocounter{totalacitemsspellfailure}{#5}
   \addtocounter{totalacitemsweight}{#6}
-  
-  \renewcommand{\printacitems}{\oldprintacitems
-  #1 & #2 & #3 & #4 & #5\% & #6~lbs. & #7\tabularnewline\hline}
-
+  % \renewcommand{\printacitems}{\oldprintacitems
+    #1 & #2 & #3 & #4 & #5\% & #6~lbs. & #7\tabularnewline\hline
+  % }
 }
 
 \newcolumntype{A}[1]{@{}>{\centering\footnotesize}m{#1\unitlength}@{}}
@@ -752,3 +751,10 @@
 \newcommand\charhair{Blue}
 \newcommand\chareyes{Grey}
 \newcommand\charlanguagesspoken{Common, Orc}
+
+\newcommand\charspelldump{No spells}
+
+\newcounter{charcoppercount}
+\newcounter{charsilvercount}
+\newcounter{chargoldcount}
+\newcounter{charplatinumcount} %% I hope that's the right counter!
