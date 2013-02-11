@@ -636,15 +636,30 @@
   }%
 }
 
-\newcounter{totalitemweight}
-
-\newcommand\printgearitems{\multicolumn{2}{c}{Gear} \tabularnewline \lfont item& \lfont wt.\tabularnewline\hline}
+\newcounter{totalitemweightcount}
+% \multicolumn{2}{c}{Gear} \tabularnewline
+\newcommand\printgearitems{ \lfont item& \lfont wt.\tabularnewline\hline}
 
 \newcommand\gearitem[2]{
-  \let\oldprintgearitems\printgearitems
-  \addtocounter{totalitemweight}{#2}
-  \renewcommand{\printgearitems}{\oldprintgearitems
-  \textit{#1} & #2~lbs.\tabularnewline\hline}
+  \addtocounter{totalitemweightcount}{#2}
+  \textit{#1} & #2~lbs.\tabularnewline
+  %% Let this code fade into a cosmic dance... until I figure out how to get it to work
+  %% Meanwhile, I'll just make players input it manually somehow.
+  % \let\oldprintgearitems\printgearitems
+  % \addtocounter{totalitemweight}{#2}
+  % \renewcommand{\printgearitems}{\noexpand\oldprintgearitems
+  %   \textit{#1} & #2~lbs.\tabularnewline\hline}
+  % % \let\printgearitems\printgearitems
+  % \renewcommand\oldprintgearitems{}
+}
+
+\newcommand\subgearitem[2]{
+  \textit{---#1} & (#2~lbs.) \tabularnewline
+}
+%% This could stay, or might not. Depends how I implement gear eventually
+\newcommand\totalitem{
+  \relax & \relax \tabularnewline
+  \textsc{Total} & \arabic{totalitemweightcount}~lbs. \tabularnewline\hline
 }
 
 \newcommand\charfeats{None}
@@ -719,6 +734,7 @@
     \classskillbox{#1} &  #4* & \skillcalculate{#5}{#6}{#7}{#8}
   \end{tabular}}
 }
+
 
 \newcommand\lfont{\fontsize{4}{4}\selectfont\scshape}
 \newcommand\charname{Tralguth}

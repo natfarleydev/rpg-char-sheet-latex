@@ -20,7 +20,15 @@
 \addtocounter{characrobaticsrankscount}{1}
 
 % items
-\gearitem{thing}{2}
+%% This is not the ideal way, but I can't figure how to do it right atm.
+\renewcommand\printgearitems{\lfont item& \lfont wt.\tabularnewline\hline
+  \gearitem{thing}{2}
+\gearitem{thing2}{4}
+\gearitem{thing3}{24}
+\gearitem{thing2}{43}
+\subgearitem{part of thing2}{43}
+\totalitem}
+
 \acitem{Padded}{2}{light}{0}{5}{10}{}
 
 

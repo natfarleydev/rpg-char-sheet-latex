@@ -204,10 +204,14 @@
 \noindent\begin{picture}(420,594)
   \put(0,594){\begin{tabular}[t]{>{\centering}p{40\unitlength} >{\centering}p{30\unitlength} >{\centering}p{30\unitlength} >{\centering}p{30\unitlength} >{\centering}p{30\unitlength} >{\centering}p{30\unitlength} >{\centering}p{30\unitlength} } \printacitems \end{tabular}}
   \put(0,500){\begin{tabular}[t]{>{\centering}p{40\unitlength} >{\centering}p{30\unitlength} >{\centering}p{30\unitlength} >{\centering}p{30\unitlength} >{\centering}p{30\unitlength} >{\centering}p{30\unitlength} >{\centering}p{30\unitlength} }\uppercase{totals} & \plusminus{totalacitemsbonus} & & \plusminus{totalacitemscheckpenalty} & \arabic{totalacitemsspellfailure}\% & \arabic{totalacitemsweight}~lbs. & \end{tabular}}
-  \put(0,470){\begin{tabular}{>{\centering}p{70\unitlength} >{\centering}p{30\unitlength}}\printgearitems \end{tabular}}
+
+  \singletitlebox{0}{475}{100}{10}{gear}
+  \put(0,470){\begin{tabular}[t]{@{}p{70\unitlength} @{\hspace{1\unitlength}}>{\centering}p{29\unitlength}@{}}\printgearitems \end{tabular}}
+
   \singletitlebox{125}{470}{180}{10}{feats}
   \put(125,460){\parbox[t][200\unitlength][t]{180\unitlength}{\itshape \charfeats}}
 \end{picture}
+
 \end{document}
 
 %%% Local Variables: 
