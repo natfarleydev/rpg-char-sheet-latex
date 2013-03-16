@@ -617,20 +617,20 @@
   \newcount\downabitcount
   \downabitcount=#2
   \advance\downabitcount-1
-  \put(#1,\downabitcount){\setlength\fboxsep{0pt}\colorbox{black!100}{\makebox(#3,11){}}}%
+  \put(#1,\downabitcount){\setlength\fboxsep{0pt}\colorbox{gray!10}{\makebox(#3,11){}}}%
   \advance\ycount1
-  \put(#1,\ycount){\makebox(#3,\hcount){\color{white}{\uppercase{#4}}}}
+  \put(#1,\ycount){\makebox(#3,\hcount){\color{black}{\uppercase{#4}}}}
   \advance\hcount-7
   \advance\ycount-1
-  \put(#1,\ycount){\makebox(#3,\hcount){\color{white}{\tiny\scshape #5}}}
+  \put(#1,\ycount){\makebox(#3,\hcount){\color{black}{\tiny\scshape #5}}}
 }
 
 \newcommand\singletitlebox[5]{
   % \put(#1,#2){\framebox(#3,#4){\uppercase{#5}}}
   \put(#1,#2){%
-    \setlength\fboxsep{0pt}\colorbox{black!100}{%
+    \setlength\fboxsep{0pt}\colorbox{gray!10}{%
       \makebox(#3,#4){%
-        \color{white}{\centering\uppercase{#5}}%
+        \color{black}{\centering\uppercase{#5}}%
       }%
     }%
   }%
